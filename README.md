@@ -1,9 +1,264 @@
-# RGBWYV
+# RGBWYV-Light
 
-Six-channel (Red, Green, Blue, White, Amber, Violet) LED light built on two Seeed XIAO nRF52840 boards.
+![RGBWYV-Light: a moon-engraved crystal globe glowing amber on a dark wood base](docs/images/rgbwyv-light.jpg)
 
-- `RGB_Peripheral_Device_R2/` – firmware for the light (PWM, MSGEQ7 audio mode, AHT20 temp, fan via PCF8574)
-- `RGB_Central_Remote_R2/` – firmware for the BLE remote that bridges USB serial to the light
-- `console.py/` – Tkinter desktop console (light/dark theme) that talks to the remote over USB at 921600 baud
-- `RGBYVW_Schematic_PCB/` – KiCad schematics, PCB, and Gerbers
-- `old/` – archived R2 version
+RGBWYV-Light is a six-channel LED lamp — red, green, blue, white, amber, and violet — built around two [Seeed XIAO nRF52840](https://wiki.seeedstudio.com/XIAO_BLE/) boards. A Tkinter desktop console talks USB CDC at 921600 baud to a BLE central remote, which bridges newline-terminated ASCII commands over BLE UART to the peripheral light.
+
+- [Features](#features)
+- [Architecture](#architecture)
+- [Hardware](#hardware)
+- [Serial command reference](#serial-command-reference)
+- [Saved data format](#saved-data-format)
+- [Building and flashing](#building-and-flashing)
+- [Console](#console)
+- [Repository layout](#repository-layout)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+
+- Four operating modes:
+  - **0 — Classic RGB:** a red–green–blue rainbow swell
+  - **1 — Audio:** seven-band MSGEQ7 visualization; the white channel stays off
+  - **2 — Manual:** direct mixer for all six channels and PWM frequency
+  - **3 — Color Swells (retro):** red–green–violet color swells
+- AHT20 temperature sensing
+- Fan control through a PCF8574 I/O expander at address `0x20`, with automatic hysteresis (on at 35 °C, off at 32 °C) plus manual `fan0` / `fan1` commands
+- Save and load of the 59 mixer parameters and the current mode to the light's internal filesystem
+
+## Architecture
+
+```mermaid
+flowchart LR
+    Console["Tkinter console"] -->|"USB CDC, 921600 baud"| Remote["BLE central remote<br/>XIAO nRF52840 Sense"]
+    Remote -->|"BLE UART"| Light["Peripheral light<br/>XIAO nRF52840"]
+    Light --> PWM["Six-channel PWM<br/>R, G, B, W, Amber, Violet"]
+    Light --> EQ["MSGEQ7 audio"]
+    Light --> Sens["AHT20 and PCF8574 fan"]
+```
+
+The central remote identifies itself as `LED Console 001` (manufacturer `Doug's Garage`). The light reports model `LED Device 001` over the BLE Device Information Service. The console auto-detects the remote by sending `*idn` and matching the reply in `config.ini`.
+
+## Hardware
+
+The light uses a Seeed XIAO nRF52840 (plain, not Sense). The remote uses a Seeed XIAO nRF52840 Sense, and in the current firmware it is only a USB-to-BLE bridge — the central sketch does not drive header GPIO.
+
+**All MCU header pins are 3.3 V only and are not 5 V tolerant.** The MSGEQ7 and any logic tied to those pins must run at 3.3 V or be level-shifted.
+
+### Peripheral pin map
+
+Verified from `RGB_Peripheral_Device_R2/main/main.ino`. On the Seeeduino nRF52 core, Arduino pin `n` is header `Dn`.
+
+| Function | Firmware | Header pin |
+|----------|----------|------------|
+| Red PWM | `RED_PIN 7` | D7 |
+| Green PWM | `GREEN_PIN 2` | D2 |
+| Blue PWM | `BLUE_PIN 8` | D8 |
+| White PWM | `WHITE_PIN 6` | D6 |
+| Amber PWM | `AMBER_PIN 9` | D9 |
+| Violet PWM | `VIOLET_PIN 3` | D3 |
+| MSGEQ7 analog out | `analogPin A0` | A0 (D0) |
+| MSGEQ7 reset | `resetPin 1` | D1 |
+| MSGEQ7 strobe | `strobePin 10` | D10 |
+| I2C SDA / SCL | default `Wire` | D4 / D5 |
+| PCF8574 | `pcf.begin(0x20, &Wire)` | address `0x20`; fan on expander pin 2 |
+| AHT20 | `Adafruit_AHTX0` on `Wire` | same I2C bus |
+
+KiCad schematics, PCB, and Gerbers are in `RGBYVW_Schematic_PCB/`. The board includes MOSFET LED drivers, the MSGEQ7, and an AHT20.
+
+PWM frequency is set by `adc55` (a value of 1000 = 10 kHz maximum) and is applied in manual and audio modes.
+
+## Serial command reference
+
+Commands are newline-terminated ASCII. Carriage returns are ignored, so CRLF is treated as a single line. The console and the central speak USB CDC at 921600 baud. The central handles a short local command set and, when a BLE connection is up, forwards every other complete line to the light over BLE UART.
+
+### Central (USB)
+
+| Command | Action |
+|---------|--------|
+| `*idn` | Print the central name (`LED Console 001`) |
+| `help` | Print the command menu |
+| `info` | Print the connected peripheral's manufacturer and model |
+
+### Peripheral (via the central)
+
+| Command | Action |
+|---------|--------|
+| `adcN,V` | Set parameter `N` (0–58) to `V`, where `V` is 0–1000 (1000 = 1.0) |
+| `mode,0` … `mode,3` | Select a mode. All six PWM channels are zeroed on a mode change; manual mode then applies the current mix |
+| `save` | Write the current 59 `adc[]` values and the mode to `data.txt` |
+| `read` | Print the saved file and reload it into RAM |
+| `val?` | Print the live RAM snapshot (59 values plus mode) |
+| `dele` | Delete the saved `data.txt` file |
+| `temp` | Print the AHT20 temperature in Celsius |
+| `fan0` / `fan1` | Turn the fan off or on and update the stored fan state |
+| `err?` | Print I2C health: `tempI2C=` and `fanI2C=` (`1` = good, `0` = bad) |
+
+### `adc` parameter map
+
+**Audio mode** (seven MSGEQ7 bands: 63 Hz, 160 Hz, 400 Hz, 1 kHz, 2.5 kHz, 6.25 kHz, 16 kHz):
+
+| Channels | Meaning |
+|----------|---------|
+| `adc0`–`adc6` | Red mixer, one weight per band |
+| `adc7`–`adc13` | Amber mixer |
+| `adc14`–`adc20` | Green mixer |
+| `adc21`–`adc27` | Blue mixer |
+| `adc28`–`adc34` | Violet mixer |
+| `adc35`–`adc41` | Upper thresholds |
+| `adc42`–`adc48` | Lower thresholds |
+
+**Manual mode:**
+
+| Channel | Meaning |
+|---------|---------|
+| `adc49` | Red |
+| `adc50` | Amber |
+| `adc51` | Green |
+| `adc52` | Blue |
+| `adc53` | Violet |
+
+**Classic RGB and color swells:**
+
+| Channel | Meaning |
+|---------|---------|
+| `adc56` | Speed |
+| `adc57` | Pastel / white level |
+| `adc58` | Brightness (color amplitude) |
+
+**Always present:**
+
+| Channel | Meaning |
+|---------|---------|
+| `adc54` | White LED (held at zero while audio mode is running) |
+| `adc55` | PWM frequency, 10 kHz max (1000 = 10 kHz) |
+
+## Saved data format
+
+`save` writes one CSV schema: all 59 `adc[]` values as thousandths, then the mode integer. `val?` uses the same layout from live RAM.
+
+`data.txt` files written by the older R2 firmware use a different scale for channels 49–55. After flashing this firmware, set the sliders you care about and send **Save** once (or `dele` followed by `save`) before trusting a restored mix.
+
+## Building and flashing
+
+Use the **Seeed nRF52 Boards** core (`Seeeduino:nrf52` 1.1.13), not the Adafruit nRF52 package and not “Seeed nRF52 mbed-enabled Boards.” The mbed core numbers D6–D10 differently; this firmware uses bare pin integers, so a mbed build would drive the wrong pads.
+
+Board manager URL:
+
+```text
+https://files.seeedstudio.com/arduino/package_seeeduino_boards_index.json
+```
+
+```bash
+arduino-cli config add board_manager.additional_urls https://files.seeedstudio.com/arduino/package_seeeduino_boards_index.json
+arduino-cli core update-index
+arduino-cli core install Seeeduino:nrf52@1.1.13
+```
+
+Libraries required by the peripheral sketch:
+
+- nRF52_PWM
+- Adafruit PCF8574
+- Adafruit AHTX0
+- Adafruit Unified Sensor
+- Adafruit BusIO
+
+`bluefruit.h`, LittleFS, and InternalFileSystem ship with the Seeed nRF52 core. `adafruit-nrfutil` and a `python` interpreter on `PATH` are needed to package the DFU zip after compile.
+
+```bash
+arduino-cli lib install "nRF52_PWM" "Adafruit PCF8574" "Adafruit AHTX0" "Adafruit Unified Sensor" "Adafruit BusIO"
+```
+
+Compile each sketch for its own board. Do not swap the FQBNs.
+
+```bash
+# Peripheral light — plain XIAO nRF52840
+arduino-cli compile --fqbn Seeeduino:nrf52:xiaonRF52840 \
+  --output-dir ./build-light \
+  RGB_Peripheral_Device_R2/main
+
+# Central remote — XIAO nRF52840 Sense
+arduino-cli compile --fqbn Seeeduino:nrf52:xiaonRF52840Sense \
+  --output-dir ./build-remote \
+  RGB_Central_Remote_R2/RGB_Central_Remote_R2
+```
+
+Flash the DFU packages over USB serial. Replace the port with the board's CDC device (`/dev/ttyACM0`, `/dev/tty.usbmodem*`, or `COMx`). The bootloader DFU rate is 115200, independent of the 921600 application baud.
+
+```bash
+adafruit-nrfutil dfu serial -pkg ./build-light/main.ino.zip -p /dev/ttyACM0 -b 115200 --touch 1200
+adafruit-nrfutil dfu serial -pkg ./build-remote/RGB_Central_Remote_R2.ino.zip -p /dev/ttyACM1 -b 115200 --touch 1200
+```
+
+`--touch 1200` pulses the port at 1200 baud so the XIAO enters the bootloader. If that handshake fails, double-tap the board's reset button and run the same command again.
+
+## Console
+
+The desktop console lives in `console.py/`. It is a Python 3 Tkinter app (ttk `clam` theme) with light and dark modes, a serial transcript, and four tabs that match the firmware modes: Manual Color Mixer, Classic RGB, Audio Effect, and Color Swells.
+
+![Console in dark mode, Manual Color Mixer tab](docs/images/console_dark_manual.png)
+
+![Console in light mode, Manual Color Mixer tab](docs/images/console_light_manual.png)
+
+### Requirements
+
+- Python 3
+- tkinter (a system package on many Linux distributions, for example `python3-tk`)
+- [pyserial](https://pypi.org/project/pyserial/)
+- [Pillow](https://pypi.org/project/Pillow/)
+
+```bash
+python3 -m pip install pyserial pillow
+```
+
+### Running
+
+```bash
+git clone https://github.com/douggmill/RGBWYV-Light.git
+cd RGBWYV-Light/console.py
+python3 main.py
+```
+
+On startup the console scans serial ports (preferring `/dev/ttyACM*`, then macOS `usbmodem` devices, then `COM` ports), sends `*idn`, and connects when the reply matches `config.ini`.
+
+`console.py/config.ini`:
+
+```ini
+[Settings]
+idn = LED Console 001
+theme = dark
+```
+
+`theme` may be `dark` or `light`. The window toggle and the View menu write this key back. **File → Open Config** opens the file in the system editor; **File → Save Values** and the **Save** button send `save` to the light. **Help** sends `help`.
+
+## Repository layout
+
+```text
+RGBWYV-Light/
+  console.py/                      Desktop console
+    main.py                        UI, sliders, and theme
+    serial_module.py               USB CDC and *idn autodetect
+    ini.py, config.ini             IDN string and saved theme
+  RGB_Central_Remote_R2/           Firmware for the BLE remote
+    RGB_Central_Remote_R2/
+  RGB_Peripheral_Device_R2/        Firmware for the light
+    main/
+  RGBYVW_Schematic_PCB/            KiCad schematic, PCB, and Gerbers
+  old/RGBWYV_R2/                   Archived R2 snapshot
+  docs/images/                     README photos
+```
+
+`old/` is the archived R2 tree, kept for reference. It is not the firmware or console you should build.
+
+## Roadmap
+
+This is a working R3 of a personal lighting project. Further firmware and console changes are expected. Follow-ups include tightening the serial protocol and cleaning up leftover prototype files under `console.py/old/`.
+
+## Contributing
+
+Issues and pull requests are welcome. Please describe the change, test against the hardware when you can, and keep command and pin behavior consistent with the firmware in this repository.
+
+## License
+
+License: not yet specified.
