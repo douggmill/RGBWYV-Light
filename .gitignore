@@ -1,0 +1,11 @@
+# Python / PyCharm
+.venv/
+.idea/
+__pycache__/
+*.pyc
+# KiCad local and backup files
+*.kicad_prl
+*-backups/
+.history/
+*.lck
+fp-info-cache
