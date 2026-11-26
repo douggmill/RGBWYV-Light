@@ -35,12 +35,13 @@ P = dict(
     WallFB=8.5,          # front/back walls (the 95.5-wide faces) = (87 - 70)/2
     Floor=7.0,           # ASSUMED (not measured)
     LidT=7.0,            # ASSUMED lid top thickness (not measured)
-    LidH=24.8,           # lid is a cap; seam ~40% down from the top (photo, estimated)
+    LidH=22.0,           # lid is a 22 mm deep cap (Doug: top surface to bottom edge)
     Standoff=23.4,       # measured by Doug: PCB top to inside floor 25.0 mm, minus the 1.6 mm board
     BoardT=1.6,
     BoardOrigL=82.69,    # board long side before the Edge.Cuts trim (KiCad); STEP is the trimmed board (0.85 mm off each end)
     LedTop=2.2,          # D2 placeholder emitter height (12-pad footprint, part number unknown): 1.2 base + 1.0 lens
-    ConeD=48.0, ConeL=30.0, ConeHole=12.0, ConeWall=1.5,   # measured by Doug: 48 mm mouth OD, 30 mm long
+    ConeD=48.0, ConeL=30.0, ConeHole=12.0, ConeWall=1.5,   # 48 mm mouth OD (Doug); ConeL is recomputed below from ConeTopGap
+    ConeTopGap=0.0,      # cone top this far below the lid top surface; 0 = flush (Doug)
     # LED sink: uxcell 30x20x10 (Amazon B093V778LH, a21012600ux0719), blue anodised, 9 straight fins, pre-applied thermal pad
     LedSinkL=30.0, LedSinkW=20.0, LedSinkH=10.0, LedSinkFins=9, LedSinkFinT=1.0, LedSinkBase=2.0, LedSinkRot=0.0,  # Rot 0: channels along X (to the -X vent wall)
     TapeT=0.25,                                  # its pre-applied thermal adhesive pad
@@ -48,11 +49,11 @@ P = dict(
     FanX=124.8 - 124.715, FanY=-(110.2 - 110.235),     # coaxial with LED heatsink centre
     FloorHoleD=30.0,                                   # intake hole through the floor
     # Custom 3D-printed low-profile fan grill on the outside of the floor (replaces the Qualtek 08346 wire guard)
-    GrillS=36.0, GrillR=3.0, GrillT=3.0,             # square plate, corner radius, thickness
+    GrillS=36.0, GrillR=3.0, GrillT=2.0,             # square plate, corner radius, thickness
     GrillHexAF=3.0, GrillRib=1.0, GrillOpenD=30.0, GrillRingW=2.0,   # honeycomb over the 30 mm opening, 2 mm solid ring
     GrillLocOD=29.6, GrillLocH=1.0, GrillLocW=1.2,   # locating ring that drops into the floor hole
     GrillHoleD=3.4, GrillCskD=6.9,                   # M3 flat head (ISO 10642 head 6.72) 90 deg countersink, on the 24 mm fan pattern
-    GrillScrewL=22.0, GrillNutT=1.8,                 # M3 x 22 flat head: grill 3 + floor 7 + fan 10 = 20, + M3 thin nut (DIN 439, 1.8) on the fan top
+    GrillScrewL=22.0, GrillNutT=1.8,                 # M3 x 22 flat head: grill 2 + floor 7 + fan 10 = 19, + M3 thin nut (DIN 439, 1.8) on the fan top
     # TO-220 sinks: Adam Tech HSK-059-04 (Digi-Key 2057-HSK-059-04-ND), extruded, M3 tapped hole at mid-length (17.5 of 35).
     # Profile (datasheet dwg A): 10.00 wide x 5.50 deep (2.4 base + 3.1 fins), 4 fins + a centre screw channel; L = 35 along the tab.
     # W along the tab, D away from the tab, H = length, vertical (down from the board).
@@ -72,7 +73,7 @@ P = dict(
     # ESTIMATED from Doug's description (photos not readable by this build step): screw, USB-C, DC jack, 3.5 mm, screw.
     VentN=5, VentD=5.0, VentRingD=9.5, VentZ=-0.5,            # top row: 5 chrome-ringed vent openings, evenly spaced
     RowZ=-14.0,                                               # bottom row height
-    ScrewLY=40.0, ScrewRY=-40.0,                              # small screws near the two ends
+    # (face screws removed per Doug: no screws on the connector face)
     JackY=0.0, JackZ=-14.0, JackHoleD=12.7, JackPanelT=6.0, JackCboreD=18.0,  # Adafruit 610 (max panel 8 mm -> counterbore)
     # No power switch: Doug switches the supply inline on the cable.
     # Amabro USB-C panel-mount breakout (Amazon B0H9S9C73Q). Listing: metal panel 20 x 6.6 mm (20.1 x 6.7 x 1.5),
@@ -81,14 +82,24 @@ P = dict(
     UsbPlateL=20.0, UsbPlateH=6.6, UsbPlateT=1.5, UsbHoleC=16.0, UsbHoleD=2.0,
     UsbPcbW=11.9, UsbPcbD=10.0, UsbPcbT=1.6, UsbRecW=8.94, UsbRecH=3.26, UsbRecL=7.35,
     UsbSkinT=1.0, UsbCutW=9.4, UsbCutH=3.7, UsbPocketW=20.6, UsbPocketH=7.2,
-    AudioY=14.5, AudioZ=-15.5, AudioHoleD=6.35, AudioCboreD=12.0, AudioPanelT=1.5,   # Adafruit 3692 3.5 mm TRS  # 1.5 below the row: clears the horizontal TO-220 that overhangs the -X board edge
+    # 3.5 mm jack: CESS model 318 stereo TRS panel socket, solder lugs, no switch (Amazon B00ZYWILMS). Listing has no drawing:
+    # dimensions ASSUMED for this common style: M6x0.5 bushing 6 long, hex nut 8 AF x 2, round body 10 dia x 13, 3 solder lugs.
+    AudioY=14.5, AudioZ=-16.0,          # 2 mm below the row: body clears the horizontal TO-220 overhanging the -X board edge
+    AudioHoleD=6.2, AudioCboreD=12.0, AudioPanelT=3.0,   # 3 mm skin left so the 6 mm thread takes the 2 mm nut
+    AudioBushD=6.0, AudioBushL=6.0, AudioNutAF=8.0, AudioNutT=2.0, AudioBodyD=10.0, AudioBodyL=13.0, AudioLugL=4.0,
     # XIAO nRF52840 (U10) on 2x 1x7 female headers + the module's own male-header spacer
-    XiaoX=144.272 - 124.715, XiaoY=-(134.62 - 110.235), XiaoRiserH=8.5, XiaoPinSpacerH=2.5,
+    XiaoX=144.272 - 124.715, XiaoY=-(134.62 - 110.235), 
     # AHT20 breakout on the existing 1x4 male header "AHT20" (plastic 2.54 mm)
-    AhtHeaderX=145.552 - 124.715, AhtHeaderY=-(121.158 - 110.235), AhtSpacerH=2.54,
+    AhtHeaderX=145.552 - 124.715, AhtHeaderY=-(121.158 - 110.235), 
     # UMLIFE AHT20 module (Amazon B09B9ZWSDZ): 10.41 along the header row x 15.11, 1.6 PCB; parametric placeholder
+    FootD=5.0, FootH=5.0, FootInset=6.0,   # enclosure feet (Doug), centres inset 6 mm from the outer corners
+    TbH=8.5,             # ASSUMED screw terminal body height (KF128/XY308-2.54 style)
+    LeadClip=1.5,        # LM317 lead protrusion past the solder (top) side after clipping
+    HdrPlastic=2.54, HdrPinBelow=3.0, HdrPinAbove=6.0, HdrPin=0.64,   # shared 2.54 mm male pin header (AHT20 1x4, XIAO 2 x 1x7)
     AhtW=10.41, AhtL=15.11, AhtT=1.6, AhtPinInset=1.27, AhtDir=1,   # AhtDir +1: extends to world +Y (KiCad -Y), as before
 )
+# cone length so its top is ConeTopGap below the lid top: lid top z = BoxH - Standoff - Floor; cone base z = BoardT + LedTop
+P["ConeL"] = round(P["BoxH"] - P["Standoff"] - P["Floor"] - P["ConeTopGap"] - (P["BoardT"] + P["LedTop"]), 3)
 HOLES = [(-27.685, 37.845), (27.685, 37.845), (-27.685, -37.845), (27.685, -37.845)]
 
 # LM317 TO-220 vertical (bottom side).  Values read from the KiCad STEP:
@@ -121,7 +132,24 @@ allb = App.BoundBox()
 for _s in pcb.Solids: allb.add(_s.BoundBox)   # envelope of the as-exported PCB
 sols = sorted(pcb.Solids, key=lambda s: -s.BoundBox.XLength * s.BoundBox.YLength)
 board = sols[0]
-comps = Part.makeCompound(sols[1:])
+# LM317 (U4-U9) leads: the KiCad TO-220 model leaves 8.07 mm sticking out of the solder (top) side; clip them to
+# LeadClip (1.5 mm, standard trimmed length) above the board top. Pad centres from the kicad_pcb (world coords).
+LM317_PADS = {"U4": [(-24.536, 23.541), (-24.536, 26.081), (-24.536, 28.621)], "U5": [(-3.223, 32.296), (-5.763, 32.296), (-8.303, 32.296)],
+              "U6": [(-8.303, 27.328), (-5.763, 27.328), (-3.223, 27.328)], "U7": [(12.271, 32.296), (9.731, 32.296), (7.191, 32.296)],
+              "U8": [(7.191, 27.328), (9.731, 27.328), (12.271, 27.328)], "U9": [(22.168, 23.447), (22.168, 25.987), (22.168, 28.527)]}
+_clipz = P["BoardT"] + P["LeadClip"]
+_cols = [Part.makeBox(1.6, 1.6, 40, App.Vector(x - 0.8, y - 0.8, _clipz)) for pl in LM317_PADS.values() for (x, y) in pl]
+_colf = _cols[0].multiFuse(_cols[1:])
+LEAD_OLD = LEAD_NEW = None
+_new = []
+for _s in sols[1:]:
+    if _s.BoundBox.intersect(_colf.BoundBox) and _s.common(_colf).Volume > 1e-6:
+        LEAD_OLD = max(LEAD_OLD or 0, _s.BoundBox.ZMax - P["BoardT"])
+        _s = _s.cut(_colf); LEAD_NEW = max(LEAD_NEW or 0, _s.BoundBox.ZMax - P["BoardT"])
+    _new.append(_s)
+comps = Part.makeCompound(_new)
+allb = App.BoundBox()
+for _s in [board] + _new: allb.add(_s.BoundBox)   # envelope after lead clipping
 grp_pcb = doc.addObject("App::DocumentObjectGroup", "PCB")
 o_board = doc.addObject("Part::Feature", "PCB_Board"); o_board.Shape = board
 o_comp = doc.addObject("Part::Feature", "PCB_Components"); o_comp.Shape = comps
@@ -157,8 +185,6 @@ cutters.append(xcyl(P["JackCboreD"]/2, P["JackY"], P["JackZ"], XN + P["JackPanel
 VENT_Y = [(-P["BoxL"]/2) + P["BoxL"] * (k + 1) / (P["VentN"] + 1) for k in range(int(P["VentN"]))]
 for vy in VENT_Y:
     cutters.append(xcyl(P["VentD"]/2, vy, P["VentZ"], XN - 1, WF + 2))
-for syp in (P["ScrewLY"], P["ScrewRY"]):
-    cutters.append(xcyl(1.25, syp, P["RowZ"], XN - 1, WF + 2))     # small screws (pilot holes)
 cutters.append(xcyl(P["AudioHoleD"]/2, P["AudioY"], P["AudioZ"], XN - 1, WF + 2))
 cutters.append(xcyl(P["AudioCboreD"]/2, P["AudioY"], P["AudioZ"], XN + P["AudioPanelT"], WF))     # inside counterbore
 # USB-C: plate stood vertical (UsbRot=90): cut-out/pocket dims swap W<->H
@@ -166,11 +192,7 @@ uw, uh = (P["UsbCutH"], P["UsbCutW"]) if abs(P["UsbRot"] - 90) < 1 else (P["UsbC
 pw, ph = (P["UsbPocketH"], P["UsbPocketW"]) if abs(P["UsbRot"] - 90) < 1 else (P["UsbPocketW"], P["UsbPocketH"])
 cutters.append(Part.makeBox(WF + 2, uw, uh, V(XN - 1, P["UsbY"] - uw/2, P["UsbZ"] - uh/2)))
 cutters.append(Part.makeBox(WF, pw, ph, V(XN + P["UsbSkinT"], P["UsbY"] - pw/2, P["UsbZ"] - ph/2)))
-for sk in (-1, 1):   # M2 screws through the 1 mm skin into the plate holes (above/below when vertical)
-    if abs(P["UsbRot"] - 90) < 1:
-        cutters.append(xcyl(P["UsbHoleD"]/2 + 0.1, P["UsbY"], P["UsbZ"] + sk * P["UsbHoleC"]/2, XN - 1, WF + 2))
-    else:
-        cutters.append(xcyl(P["UsbHoleD"]/2 + 0.1, P["UsbY"] + sk * P["UsbHoleC"]/2, P["UsbZ"], XN - 1, WF + 2))
+# no screw holes for the USB-C plate (face screws removed per Doug); the plate is held in its inside pocket (glue/epoxy)
 for (hx, hy) in HOLES:   # countersunk screw holes in the floor
     cutters.append(Part.makeCylinder(1.7, P["Floor"] + 2, V(hx, hy, BOX_BOT - 1)))
 o_cut = doc.addObject("Part::Feature", "WallCutouts"); o_cut.Shape = cutters[0].multiFuse(cutters[1:]).removeSplitter()  # fused: overlapping tools in a compound cut unreliably
@@ -232,11 +254,24 @@ grp_hw.addObjects([co, ci, cone])
 led_body = Part.makeBox(9.0, 12.0, 1.2, V(-4.5, -6.0, 0)).fuse(Part.makeCylinder(3.5, P["LedTop"] - 1.2, V(0, 0, 1.2)))
 led = doc.addObject("Part::Feature", "LED_D2_placeholder")
 led.Shape = led_body; led.Placement.Base = V(LEDX, LEDY, P["BoardT"])
-# J1: Xinya XY308-2.54 2P terminal block (no KiCad model) - approximate 5.08 x 6.5 x 8.5 body
-j1 = doc.addObject("Part::Feature", "J1_TerminalBlock_approx")
-j1.Shape = Part.makeBox(5.08, 6.5, 8.5, V(-1.27, -3.25, 0))
-j1.Placement.Base = V(96.266 - 124.715, -(105.664 - 110.235), P["BoardT"])
-grp_hw.addObjects([led, j1])
+# J1-J3: 2.54 mm pitch PCB screw terminals (KF128/DG308-2.54 style, footprint Xinya XY308-2.54-nP). No STEP in the KiCad
+# library, and the JSZAAHZ kit listing (B0FCXV6GT3) gives no dimensions -> body ASSUMED from the XY308 footprint fab outline:
+# (n-1)*2.54 + 3.04 long x 6.5 deep (pins 3.1 from the back, 3.4 from the wire side) x TbH tall; wire entries on the KiCad +y side.
+TBLOCKS = {"J1": (2, 96.266, 105.664), "J2": (3, 102.108, 114.3), "J3": (4, 145.542, 102.616)}   # pin count, pad 1 (PCB mm), rotation 0
+def tblock_shape(n):
+    L = (n - 1) * 2.54 + 3.04
+    b = Part.makeBox(L, 6.5, P["TbH"], V(-1.52, -3.4, 0))           # world y = -KiCad y: wire side faces world -Y
+    for i in range(n):
+        b = b.cut(Part.makeBox(1.8, 3.0, 2.0, V(i * 2.54 - 0.9, -3.41, 1.2)))                   # wire entry
+        b = b.cut(Part.makeCylinder(1.0, 1.5, V(i * 2.54, 0.4, P["TbH"] - 1.5)))               # screw access
+    return b
+tbs = []
+for ref, (n, px, py) in TBLOCKS.items():
+    o = doc.addObject("Part::Feature", "%s_ScrewTerminal_2p54_%dP" % (ref, n))
+    o.Shape = tblock_shape(n); o.Placement.Base = V(px - 124.715, -(py - 110.235), P["BoardT"])
+    tbs.append(o)
+j1 = tbs[0]
+grp_hw.addObjects([led] + tbs)
 
 # ---------------------------------------------------------------- heatsinks
 grp_th = doc.addObject("App::DocumentObjectGroup", "Thermal")
@@ -363,6 +398,11 @@ for sx in (-1, 1):
         scr_parts.append(Part.Face(nut).extrude(V(0, 0, P["GrillNutT"])).cut(Part.makeCylinder(1.5, 3, V(x, y, FLOOR_TOP + P["FanT"] - 0.2))))
 grill_screws = doc.addObject("Part::Feature", "GrillScrews_M3_FH_x4"); grill_screws.Shape = Part.makeCompound(scr_parts)
 grp_th.addObject(grill_screws)
+# enclosure feet (Doug: 5 mm tall x 5 mm dia), inset FootInset from the outer corners
+FEET_XY = [(sx * (P["BoxW"]/2 - P["FootInset"]), sy * (P["BoxL"]/2 - P["FootInset"])) for sx in (-1, 1) for sy in (-1, 1)]
+feet = doc.addObject("Part::Feature", "Feet_5x5_x4")
+feet.Shape = Part.makeCompound([Part.makeCylinder(P["FootD"]/2, P["FootH"], V(x, y, BOX_BOT - P["FootH"])) for (x, y) in FEET_XY])
+grp_th.addObject(feet)
 
 # ---------------------------------------------------------------- panel parts
 PARTS = os.path.join(HERE, "parts")
@@ -407,8 +447,24 @@ usb.Shape = amabro_usbc()
 # local +y (into box) -> world +X ; then spin about the socket axis by UsbRot
 usb.Placement = App.Placement(V(XN, P["UsbY"], P["UsbZ"]),
                               App.Rotation(V(0, 0, 1), -90).multiply(App.Rotation(V(0, 1, 0), P["UsbRot"])))
-audio = load_part("Adafruit_3692_TRS_3.5mm_panel_jack.step", "Audio_Adafruit3692", P["AudioY"], P["AudioZ"],
-                  XN - 3.1, outward_is_plus_z=False)   # nut back face (model z=3.1) on the outer face
+def cess_jack(P):
+    """CESS 318-style 3.5 mm stereo TRS panel jack, ASSUMED dims. Local x = 0 at the outer wall face, +x into the box."""
+    t = P["AudioPanelT"]
+    body = Part.makeCylinder(P["AudioBodyD"]/2, P["AudioBodyL"], V(t, 0, 0), V(1, 0, 0))
+    bush = Part.makeCylinder(P["AudioBushD"]/2, P["AudioBushL"], V(t - P["AudioBushL"], 0, 0), V(1, 0, 0))
+    bush = bush.cut(Part.makeCylinder(1.8, P["AudioBushL"] + P["AudioBodyL"], V(t - P["AudioBushL"] - 0.1, 0, 0), V(1, 0, 0)))  # 3.5 mm plug bore
+    rc = P["AudioNutAF"] / math.sqrt(3)
+    nut = Part.Face(Part.makePolygon([V(-P["AudioNutT"], rc*math.cos(math.radians(60*k)), rc*math.sin(math.radians(60*k))) for k in range(7)])).extrude(V(P["AudioNutT"], 0, 0))
+    nut = nut.cut(Part.makeCylinder(P["AudioBushD"]/2, 5, V(-3, 0, 0), V(1, 0, 0)))
+    parts = [body, bush, nut]
+    for k in range(3):                      # tip, ring, sleeve solder lugs off the back
+        lug = Part.makeBox(P["AudioLugL"], 0.5, 2.5, V(t + P["AudioBodyL"], -0.25, 1.5))
+        lug.rotate(V(0, 0, 0), V(1, 0, 0), 90 + 120 * k)
+        parts.append(lug)
+    return Part.makeCompound(parts)
+audio = doc.addObject("Part::Feature", "Audio_CESS318_3p5mm_TRS")
+audio.Shape = cess_jack(P)
+audio.Placement.Base = V(XN, P["AudioY"], P["AudioZ"])
 for o, ky, kz in ((jack, "JackY", "JackZ"), (usb, "UsbY", "UsbZ"), (audio, "AudioY", "AudioZ")):
     bind(o, ".Placement.Base.y", "Params." + ky); bind(o, ".Placement.Base.z", "Params." + kz)
 # chrome vent eyelets and the two edge screws on the -X connector wall
@@ -418,30 +474,31 @@ for vy in VENT_Y:
     r = r.fuse(xcyl(P["VentD"]/2, vy, P["VentZ"], XN, WF).cut(xcyl(P["VentD"]/2 - 0.4, vy, P["VentZ"], XN - 1, WF + 2)))
     rings.append(r)
 o_vents = doc.addObject("Part::Feature", "Vent_Eyelets_x5"); o_vents.Shape = Part.makeCompound(rings)
-scr = []
-for syp in (P["ScrewLY"], P["ScrewRY"]):
-    scr.append(xcyl(2.5, syp, P["RowZ"], XN - 1.5, 1.5).fuse(xcyl(1.25, syp, P["RowZ"], XN, 10)))
-o_scr = doc.addObject("Part::Feature", "FaceScrews_x2"); o_scr.Shape = Part.makeCompound(scr)
 panel_parts = [jack, usb, audio]
-grp_hw.addObjects(panel_parts + [o_vents, o_scr])
+grp_hw.addObjects(panel_parts + [o_vents])
 
 # ---------------------------------------------------------------- XIAO nRF52840 (U10) on risers
 grp_mod = doc.addObject("App::DocumentObjectGroup", "Modules")
 BT = P["BoardT"]
-xiao_bot = BT + P["XiaoRiserH"] + P["XiaoPinSpacerH"]
+def pin_header(name, n, x1, y, along=(1, 0)):
+    """Shared 2.54 mm male pin header, 1 x n, plastic HdrPlastic tall sitting on the board top; square pins run from
+    HdrPinBelow under the plastic (through the main board) to HdrPinAbove over it (through the module). x1/y = pin 1."""
+    ax, ay = along
+    pl = HdrPlastic = P["HdrPlastic"]
+    sh = None
+    for i in range(n):
+        cx, cy = x1 + ax * i * 2.54, y + ay * i * 2.54
+        b = Part.makeBox(2.54, 2.54, pl, V(cx - 1.27, cy - 1.27, BT))
+        pin = Part.makeBox(P["HdrPin"], P["HdrPin"], P["HdrPinBelow"] + pl + P["HdrPinAbove"],
+                           V(cx - P["HdrPin"]/2, cy - P["HdrPin"]/2, BT - P["HdrPinBelow"]))
+        b = b.fuse(pin)
+        sh = b if sh is None else sh.fuse(b)
+    o = doc.addObject("Part::Feature", name); o.Shape = sh.removeSplitter()
+    return o
+xiao_bot = BT + P["HdrPlastic"]                   # XIAO sits on the header plastic, same as the AHT20
 risers = []
 for k, dy in enumerate((-7.62, 7.62)):          # pad rows 15.24 mm apart (pcb y 127.0 / 142.24)
-    fh = Part.makeBox(17.78, 2.54, P["XiaoRiserH"], V(-8.89, -1.27, 0))
-    for i in range(7):
-        fh = fh.cut(Part.makeBox(1.0, 1.0, P["XiaoRiserH"] + 1, V(-7.62 + i * 2.54 - 0.5, -0.5, 0.5)))
-    o = doc.addObject("Part::Feature", "XIAO_Riser_FemaleHdr_1x7_%d" % (k + 1)); o.Shape = fh
-    o.Placement.Base = V(P["XiaoX"], P["XiaoY"] + dy, BT)
-    sp = Part.makeBox(17.78, 2.54, P["XiaoPinSpacerH"], V(-8.89, -1.27, 0))
-    for i in range(7):
-        sp = sp.fuse(Part.makeBox(0.64, 0.64, P["XiaoPinSpacerH"] + 6.0, V(-7.62 + i * 2.54 - 0.32, -0.32, -5.5)))
-    o2 = doc.addObject("Part::Feature", "XIAO_MaleHdr_1x7_%d" % (k + 1)); o2.Shape = sp
-    o2.Placement.Base = V(P["XiaoX"], P["XiaoY"] + dy, BT + P["XiaoRiserH"])
-    risers += [o, o2]
+    risers.append(pin_header("PinHeader_1x7_XIAO_%d" % (k + 1), 7, P["XiaoX"] - 7.62, P["XiaoY"] + dy))
 xs = Part.read(os.path.join(PARTS, "Seeed_XIAO_nRF52840_v15.step"))
 # Seeed model: board in its X-Z plane, +Y up, PCB x -8.67..12.28, z -15.0..2.78, bottom y=-0.25, USB-C at +X.
 xoff = App.Placement(V(-(-8.67 + 12.28) / 2, 0.25, -(-15.0 + 2.78) / 2), App.Rotation())
@@ -454,18 +511,17 @@ grp_mod.addObjects(risers + [xiao])
 
 # ---------------------------------------------------------------- AHT20 breakout on the "AHT20" 1x4 header
 def aht_shape(P, d):
-    cx = P["AhtHeaderX"] + 3 * 2.54 / 2; yh = P["AhtHeaderY"]; z0 = BT + P["AhtSpacerH"]
+    cx = P["AhtHeaderX"] + 3 * 2.54 / 2; yh = P["AhtHeaderY"]; z0 = BT + P["HdrPlastic"]
     y0 = yh - d * P["AhtPinInset"]; y1 = y0 + d * P["AhtL"]
     pcb_ = Part.makeBox(P["AhtW"], P["AhtL"], P["AhtT"], V(cx - P["AhtW"]/2, min(y0, y1), z0))
     ym = (y0 + y1) / 2 + d * 2.0
     sens = Part.makeBox(3.0, 3.0, 1.0, V(cx - 1.5, ym - 1.5, z0 + P["AhtT"]))
-    pins = [Part.makeBox(0.64, 0.64, P["AhtT"] + 3.0, V(P["AhtHeaderX"] + k * 2.54 - 0.32, yh - 0.32, z0 - 0.5)) for k in range(4)]
-    bar = Part.makeBox(10.16, 2.5, 2.5, V(cx - 5.08, yh - 1.25, z0 + P["AhtT"]))   # header plastic on top (pins soldered from below)
-    return Part.makeCompound([pcb_, sens, bar] + pins)
+    return Part.makeCompound([pcb_, sens])
+aht_hdr = pin_header("PinHeader_1x4_AHT20", 4, P["AhtHeaderX"], P["AhtHeaderY"])
 aht = doc.addObject("Part::Feature", "AHT20_UMLIFE_module")
 aht.Shape = aht_shape(P, P["AhtDir"])
 aht_alt = aht_shape(P, -P["AhtDir"])   # opposite direction, for the report only
-grp_mod.addObject(aht)
+grp_mod.addObjects([aht_hdr, aht])
 
 doc.recompute()
 
@@ -482,14 +538,25 @@ report.append("    (possible explanations: inner measured at a lip/rim, board ed
 report.append("Board as modelled (Edge.Cuts trimmed 0.85 mm per end) %.2f x %.2f: X clearance %.2f/side, Y clearance %.2f/side"
               % (b.XLength, b.YLength, iw2 - b.XMax, il2 - b.YMax))
 report.append("Component envelope X %.2f..%.2f -> min wall gap %.2f" % (allb.XMin, allb.XMax, iw2 - max(-allb.XMin, allb.XMax)))
+report.append("LM317 leads (U4-U9) clipped: %.2f -> %.2f mm past the solder (top) side (LeadClip %.1f)" % (LEAD_OLD, LEAD_NEW, P["LeadClip"]))
+for _t in tbs:
+    _b = _t.Shape.BoundBox
+    report.append("%s: x %.2f..%.2f y %.2f..%.2f z %.2f..%.2f, wire side y=%.2f (faces -Y); lid gap %.2f; gaps: cone %s, AHT20 %s, XIAO %s, PCB comps %s, walls X %.2f/%.2f" % (
+        _t.Name, _b.XMin, _b.XMax, _b.YMin, _b.YMax, _b.ZMin, _b.ZMax, _b.YMin, (P["BoxH"] - P["Floor"] - P["LidT"] - P["Standoff"]) - _b.ZMax,
+        "%.2f" % _t.Shape.distToShape(cone.Shape)[0], "%.2f" % _t.Shape.distToShape(aht.Shape)[0], "%.2f" % _t.Shape.distToShape(xiao.Shape)[0],
+        ("CLASH %.1f mm3" % _t.Shape.common(o_comp.Shape).Volume) if _t.Shape.common(o_comp.Shape).Volume > 0.05 else "%.2f" % _t.Shape.distToShape(o_comp.Shape)[0],
+        _b.XMin + P["BoxW"]/2 - P["WallFB"], P["BoxW"]/2 - P["WallFB"] - _b.XMax))
 report.append("Lowest PCB part z=%.2f -> %.2f mm above floor" % (allb.ZMin, allb.ZMin - FLOOR_TOP))
 report.append("Highest PCB part z=%.2f -> %.2f mm below lid underside" % (allb.ZMax, (P["BoxH"] - P["Floor"] - P["LidT"] - P["Standoff"]) - allb.ZMax))
 cb = bb(cone)
 lid_top = P["BoxH"] - P["Floor"] - P["Standoff"]
-report.append("Cone top z=%.2f vs lid top z=%.2f -> sticks out %.2f mm" % (cb.ZMax, lid_top, cb.ZMax - lid_top))
+_d = cb.ZMax - lid_top
+report.append("Cone top z=%.2f vs lid top z=%.2f -> %s; mouth OD %.1f in the %.1f lid hole (%.2f radial gap), cone vs lid overlap %.1f mm3" % (
+    cb.ZMax, lid_top, "FLUSH (0.00)" if abs(_d) < 0.005 else ("sticks out %.2f mm" % _d if _d > 0 else "%.2f mm below the lid top" % -_d),
+    P["ConeD"], P["ConeD"] + 1.0, 0.5, cone.Shape.common(woodlid.Shape).Volume))
 inner_solid = Part.makeBox(2*iw2, 2*il2, P["BoxH"], V(-iw2, -il2, FLOOR_TOP))
 movers = to_sinks + [ledsink, fan]
-static = [o_comp, o_board] + [o for o in doc.Objects if o.Name.startswith("Standoff_")] + panel_parts + risers + [xiao, aht]
+static = [o_comp, o_board] + [o for o in doc.Objects if o.Name.startswith("Standoff_")] + panel_parts + risers + [xiao, aht, aht_hdr]
 for o in movers:
     s = o.Shape
     sb = s.BoundBox
@@ -521,8 +588,11 @@ for o in to_sinks + [o for o in doc.Objects if o.Name.startswith("Standoff_")]:
     d = fan.Shape.distToShape(o.Shape)[0]
     report.append("  fan to %-24s %s" % (o.Name, ("%.2f mm" % d) if d > 1e-6 else "CLASH (touching/overlapping)"))
 gb = guard.Shape.BoundBox
-report.append("Fan grill (3D printed, %.0fx%.0f, %.1f thick, hex %.1f AF / %.1f ribs): z %.2f..%.2f -> sits %.2f mm proud of the floor underside (z %.2f); no feet modelled, so the box rests on the grill unless feet >= %.1f mm are added" % (
-    P["GrillS"], P["GrillS"], P["GrillT"], P["GrillHexAF"], P["GrillRib"], gb.ZMin, gb.ZMax, BOX_BOT - gb.ZMin, BOX_BOT, BOX_BOT - gb.ZMin))
+report.append("Fan grill (3D printed, %.0fx%.0f, %.1f thick, hex %.1f AF / %.1f ribs): z %.2f..%.2f -> sits %.2f mm proud of the floor underside (z %.2f)" % (
+    P["GrillS"], P["GrillS"], P["GrillT"], P["GrillHexAF"], P["GrillRib"], gb.ZMin, gb.ZMax, BOX_BOT - gb.ZMin, BOX_BOT))
+report.append("Feet: 4 x %.1f dia x %.1f tall at x +/-%.2f, y +/-%.2f (inset %.1f from the outer corners), table at z %.2f -> grill-to-table clearance %.2f mm; feet to grill %.2f mm (overlap %.1f mm3)" % (
+    P["FootD"], P["FootH"], P["BoxW"]/2 - P["FootInset"], P["BoxL"]/2 - P["FootInset"], P["FootInset"], BOX_BOT - P["FootH"], gb.ZMin - (BOX_BOT - P["FootH"]),
+    feet.Shape.distToShape(guard.Shape)[0], feet.Shape.common(guard.Shape).Volume))
 report.append("  locating ring OD %.1f x %.1f tall in the %.1f floor hole (%.2f radial gap); grill vs floor overlap %.1f mm3, vs fan %.2f mm" % (
     P["GrillLocOD"], P["GrillLocH"], P["FloorHoleD"], (P["FloorHoleD"] - P["GrillLocOD"])/2, guard.Shape.common(box.Shape).Volume, guard.Shape.distToShape(fan.Shape)[0]))
 sbb = grill_screws.Shape.BoundBox
@@ -530,7 +600,7 @@ report.append("  screws: 4 x M3 x %.0f flat head + thin nut, grill %.0f + floor 
     P["GrillScrewL"], P["GrillT"], P["Floor"], P["FanT"], P["GrillT"] + P["Floor"] + P["FanT"], sbb.ZMax, ", ".join("%s %.2f" % (n, d) for d, n in sorted(
         ((grill_screws.Shape.distToShape(x.Shape)[0], x.Name) for x in to_sinks + [ledsink, o_comp]))[:3])))
 report.append("Floor hole %.1f mm dia under fan bore %.1f mm" % (P["FloorHoleD"], P["FanBore"]))
-report.append("Cone: %.1f mm long, %.1f mm mouth OD, %.1f mm LED hole; lid hole %.1f mm" % (
+report.append("Cone: %.2f mm long, %.1f mm mouth OD, %.1f mm LED hole; lid hole %.1f mm" % (
     P["ConeL"], P["ConeD"], P["ConeHole"], P["ConeD"] + 1.0))
 LID_UNDER = P["BoxH"] - P["Floor"] - P["LidT"] - P["Standoff"]
 def gap(a, b):
@@ -541,7 +611,7 @@ def gap(a, b):
     if d > 1e-6: return "%.2f" % d
     v = a.Shape.common(b.Shape).Volume
     return "CLASH %.1f mm3" % v if v > 0.5 else "touch"
-others = [o_comp, o_board, fan, ledsink, cone, xiao, aht, led, j1] + to_sinks + panel_parts + risers + \
+others = [o_comp, o_board, fan, ledsink, cone, xiao, aht, led] + tbs + to_sinks + panel_parts + risers + \
          [o for o in doc.Objects if o.Name.startswith("Standoff_")]
 report.append("TO-220 sinks (Adam Tech HSK-059-04, 10 W x 5.5 D, 35 mm stock cut to %.1f; M3 hole at z %.2f, %.2f below the sink top): U5/U7 fin tips filed to 5.0 deep for the +Y end wall:" % (P["SinkH_U4"], P["ToSinkHoleZ"], -(P["ToSinkHoleZ"] + P["ToSinkTopGap"])))
 for o in to_sinks:
@@ -573,16 +643,21 @@ report.append("XIAO U10: centre (%.2f, %.2f), USB-C to -X, PCB bottom z=%.2f (%.
     P["XiaoX"], P["XiaoY"], xiao_bot, xiao_bot - BT, xb.ZMax, xb.ZMax - BT, LID_UNDER - xb.ZMax))
 report.append("  XIAO extents x %.2f..%.2f y %.2f..%.2f; gaps: cone %s, PCB comps %s, AHT20 %s, lid %.2f" % (
     xb.XMin, xb.XMax, xb.YMin, xb.YMax, gap(xiao, cone), gap(xiao, o_comp), gap(xiao, aht), LID_UNDER - xb.ZMax))
+report.append("Shared header part pin_header(): 2.54 mm male header, plastic %.2f, pins %.2f sq x %.2f total (%.1f below the plastic, %.1f above); AHT20 1x4, XIAO 2 x 1x7" % (
+    P["HdrPlastic"], P["HdrPin"], P["HdrPinBelow"] + P["HdrPlastic"] + P["HdrPinAbove"], P["HdrPinBelow"], P["HdrPinAbove"]))
+_xc = xiao.Shape.common(o_comp.Shape).Volume
+report.append("XIAO underside z=%.2f (%.2f above the board top, same as the AHT20 at %.2f); XIAO vs board parts: %s (overlap %.1f mm3); pin tips z=%.2f" % (
+    xiao_bot, xiao_bot - BT, aht.Shape.BoundBox.ZMin - BT, gap(xiao, o_comp), _xc, BT + P["HdrPlastic"] + P["HdrPinAbove"]))
 ab = aht.Shape.BoundBox
 report.append("AHT20 (UMLIFE B09B9ZWSDZ placeholder): x %.2f..%.2f y %.2f..%.2f z %.2f..%.2f; board edge x=%.2f (overhang %.2f), +X inner wall x=%.2f (%s)" % (
     ab.XMin, ab.XMax, ab.YMin, ab.YMax, ab.ZMin, ab.ZMax, board.BoundBox.XMax, ab.XMax - board.BoundBox.XMax, iw2,
     ("INTO WALL by %.2f mm" % (ab.XMax - iw2)) if ab.XMax > iw2 else "clear %.2f" % (iw2 - ab.XMax)))
 report.append("  AHT20 gaps: XIAO risers %s, XIAO %s, cone %s, PCB comps %s" % (
-    min(gap(aht, r) for r in risers[::2]), gap(aht, xiao), gap(aht, cone), gap(aht, o_comp)))
+    min(gap(aht, r) for r in risers), gap(aht, xiao), gap(aht, cone), gap(aht, o_comp)))
 _alt = doc.addObject("Part::Feature", "_aht_alt"); _alt.Shape = aht_alt
 abx = aht_alt.BoundBox
 report.append("  (alternative, flipped direction: y %.2f..%.2f; +X wall %.2f; gaps: XIAO risers %s, XIAO %s, cone %s, PCB comps %s)" % (
-    abx.YMin, abx.YMax, iw2 - abx.XMax, min(gap(_alt, r) for r in risers[::2]), gap(_alt, xiao), gap(_alt, cone), gap(_alt, o_comp)))
+    abx.YMin, abx.YMax, iw2 - abx.XMax, min(gap(_alt, r) for r in risers), gap(_alt, xiao), gap(_alt, cone), gap(_alt, o_comp)))
 doc.removeObject("_aht_alt")
 txt = doc.addObject("App::TextDocument", "FitReport"); txt.Text = "\n".join(report)
 print("\n".join(report))
@@ -595,7 +670,7 @@ if App.GuiUp:
         "WoodBox": (0.72, 0.52, 0.30), "WoodLid": (0.78, 0.58, 0.36),
         "ReflectorCone": (0.85, 0.85, 0.88), "Heatsink_LED_uxcell_30x20x10": (0.15, 0.35, 0.85),
         "ThermalPad_uxcell": (0.95, 0.85, 0.30), "Fan_3010": (0.10, 0.10, 0.10), "FanGrill_3Dprinted_36mm": (0.15, 0.15, 0.17), "GrillScrews_M3_FH_x4": (0.8, 0.8, 0.82),
-        "XIAO_nRF52840_U10": (0.15, 0.15, 0.6), "AHT20_UMLIFE_module": (0.1, 0.45, 0.15),
+        "XIAO_nRF52840_U10": (0.15, 0.15, 0.6), "AHT20_UMLIFE_module": (0.1, 0.45, 0.15), "Feet_5x5_x4": (0.1, 0.1, 0.1),
     }
     for o in doc.Objects:
         vo = o.ViewObject
@@ -609,7 +684,7 @@ if App.GuiUp:
 
 # ---------------------------------------------------------------- save + export
 doc.saveAs(OUT_FCSTD)
-visible = [o_board, o_comp, box, woodlid, cone, tape, ledsink, fan, guard, grill_screws, xiao, aht, o_vents, o_scr, led, j1] + panel_parts + risers + to_sinks + \
+visible = [o_board, o_comp, box, woodlid, cone, tape, ledsink, fan, guard, grill_screws, xiao, aht, aht_hdr, o_vents, led, feet] + tbs + panel_parts + risers + to_sinks + \
           [o for o in doc.Objects if o.Name.startswith(("Standoff_", "Screw_M3_"))]
 import Import
 Import.export(visible, OUT_STEP)

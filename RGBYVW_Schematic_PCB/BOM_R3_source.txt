@@ -1,5 +1,5 @@
 Reference			Value			Qty
-"AHT20,J3"			Conn_01x04		2
+AHT20				Conn_01x04		1
 C1				100uF			1
 C2,				33pF CoG 50V 0402	1
 C3				0.1uF CoG 50V 0704	1
@@ -9,6 +9,7 @@ D1				SDM05U20S3-7 20V 500mA	1
 D2				12 pin LED		1
 J1				Screw_Terminal_01x02	1
 J2				Screw_Terminal_01x03	1
+J3				Screw_Terminal_01x04	1
 "Q1,Q2,Q3,Q4,Q5,Q6"		IRLML6244		6
 "R1,R3"				22kΩ 0603		2
 R2				221kΩ 0805		1
@@ -20,26 +21,31 @@ U2				MSGEQ7 DIP-8		1
 U10				nRF52840_XAIO		1
 
 Hardware:
-Item					Value/PN				Qty	Dimensions / Rating			Link
-Fan					WINSINN DC 2010 2-pin			1	20mm x 10mm, hydraulic bearing		https://www.amazon.com/gp/product/B08ML8NS42
-Fan Grills / Filters			PN?					2	Dimensions?
-Reflector Cone				Amazon part				1	2" x 12mm LED hole x 1.25" long		https://www.amazon.com/dp/B07MS8N2DS
-Wooden Box				Amazon part				1	3.75" x 3 1/8" x 2.5"			https://www.amazon.com/dp/B0B51L68YK
-2.1mm Power Jack			Chassis mount				1	>3A
-USB-C Breakout Board (horizontal)		Amabro B0H9S9C73Q				1	Chassis mount		https://www.amazon.com/dp/B0H9S9C73Q
-3.5mm Stereo Audio Jack			Adafruit 3692				1	Chassis mount, price TBD	https://www.adafruit.com/product/3692
-AHT20 Temp/Humidity Module		UMLIFE B09B9ZWSDZ				1	15.11 x 10.41mm, 4-pin 2.54mm I2C	https://www.amazon.com/dp/B09B9ZWSDZ
-Fan Grill, 3D printed (PLA/PETG)	mechanical/parts/fan_grill_30mm.stl		1	36 x 36 x 3mm, for the 30mm fan
-M3 Flat Head Screws + Nuts (fan grill)	ISO 10642 / DIN 7991			4	M3 x 22mm (grill 3 + floor 7 + fan 10) + M3 thin nut DIN 439 on fan top
-M3 Standoffs				PN?					4	M3 x 26mm
-M3 Button Head Screws			PN?					4	M3 x 5-6mm
-M3 Countersunk Screws			PN?					4	M3 x 12mm
+Item					Value/PN				Qty	Dimensions / Rating / Notes			Link
+Wooden Box				Amazon part				1	95.5 x 87 x 62mm outer (3.75" x 3 1/8" x 2.5")	https://www.amazon.com/dp/B0B51L68YK
+Reflector Cone				Amazon part				1	48mm mouth, 12mm LED hole; shorten to 27.8mm (flush with lid)	https://www.amazon.com/dp/B07MS8N2DS
+Fan 30x30x10mm				Sunon MF30100V1-1000U-A99		1	5VDC 0.6W 5.5CFM, 24mm holes (check voltage vs circuit)	https://www.digikey.com/en/products/detail/sunon-fans/MF30100V1-1000U-A99/10441403
+Fan Grill, 3D printed (PLA/PETG)	mechanical/parts/fan_grill_30mm.stl	1	36 x 36 x 2mm, outside of floor
+M3 Flat Head Screws (fan grill)		ISO 10642 / DIN 7991			4	M3 x 22mm (grill 2 + floor 7 + fan 10)
+M3 Thin Nuts (fan grill)		DIN 439					4	M3, 1.8mm thick, on top of the fan
+2.1mm DC Power Jack			uxcell B01C8CRCJ4			1	Chassis mount, threaded, >3A			https://www.amazon.com/dp/B01C8CRCJ4
+USB-C Breakout Board (horizontal)	Amabro B0H9S9C73Q			1	Chassis mount, slot horizontal; plate glued in its inside wall pocket (no face screws)	https://www.amazon.com/dp/B0H9S9C73Q
+3.5mm Stereo Audio Jack (TRS)		CESS 318 B00ZYWILMS			1	Panel mount, M6 thread, solder lugs; $6.99 per 5-pack	https://www.amazon.com/dp/B00ZYWILMS
+Screw Terminals 2.54mm pitch (J1 2P, J2 3P, J3 4P)	JSZAAHZ 46-pc kit B0FCXV6GT3	1	KF128/DG308-2.54 style, 150V 6A, 26-18AWG; $14.99 kit (uses 1x 2P, 1x 3P, 1x 4P); dims assumed from XY308-2.54	https://www.amazon.com/dp/B0FCXV6GT3
+AHT20 Temp/Humidity Module		UMLIFE B09B9ZWSDZ			1	15.11 x 10.41mm, 4-pin 2.54mm I2C		https://www.amazon.com/dp/B09B9ZWSDZ
+Male Pin Header 2.54mm, breakaway 1x40	PN?					1	18 pins used: XIAO 2 x 1x7 + AHT20 1x4, 2.54mm plastic
+Vent Eyelets (connector face)		chrome, 5mm ID				5	Already on Doug's box
+Enclosure Feet				source unknown				4	5mm dia x 5mm tall; grill sits 3mm above the table
+M3 Standoffs				PN?					4	23.4mm measured (non-standard): M3x23 + 0.4mm washer, or stack M3x20 + M3x3
+M3 Button Head Screws			PN?					4	M3 x 5-6mm (board to standoffs)
+M3 Countersunk Screws			PN?					4	M3 x 12mm (floor to standoffs)
 
 Heatsink:
-Item					Value/PN				Qty	Dimensions				Link
-LED Heatsink				uxcell 30x20x10 (10-pack)			1	$9.99 per 10-pack, blue, pre-applied thermal pad	https://www.amazon.com/dp/B093V778LH
-TO-220 Heatsink (LM317)			Adam Tech HSK-059-04			6	$1.37 ea, 35mm cut to 20.0mm; U5/U7 fin tips filed to 5.0mm; Digi-Key 2057-HSK-059-04-ND	https://www.digikey.com/en/products/detail/adam-tech/HSK-059-04/26224094
+Item					Value/PN				Qty	Dimensions / Notes				Link
+LED Heatsink				uxcell 30x20x10 (10-pack)		1	$9.99 per 10-pack, blue, pre-applied thermal pad	https://www.amazon.com/dp/B093V778LH
+TO-220 Heatsink (LM317)			Adam Tech HSK-059-04			6	$1.37 ea, 35mm cut to 20mm; U5/U7 fin tips filed to 5.0mm; Digi-Key 2057-HSK-059-04-ND	https://www.digikey.com/en/products/detail/adam-tech/HSK-059-04/26224094
 											alt: https://www.amazon.com/gp/product/B0CG91KN14
+M3 Screws (TO-220 sinks)		PN?					6	M3 x 6mm pan head into the sink's tapped hole (tab is live: keep sinks apart)
 Thermal Paste				-					A/R	LM317 TO-220 tabs only
-3M 8810 Insulating Thermal Tape	3M 8810				1	LED pad (pad is electrically live - no paste or epoxy there)	https://www.adafruit.com/product/1467
+3M 8810 Insulating Thermal Tape		3M 8810					1	LED pad (pad is electrically live - no paste or epoxy there)	https://www.adafruit.com/product/1467
 Epoxy					-					A/R	Not on LED pad (use 3M 8810 tape there)
