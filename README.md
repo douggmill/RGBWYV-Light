@@ -118,10 +118,11 @@ From [`BOM_R3_source.txt`](RGBYVW_Schematic_PCB/BOM_R3_source.txt).
 | M3 standoffs | TBD | 4 | M3 × 26 mm | |
 | M3 button-head screws | TBD | 4 | M3 × 5–6 mm | |
 | M3 countersunk screws | TBD | 4 | M3 × 12 mm | |
-| LED heatsink | Amazon part | 2 | 20 × 20 × 10 mm | [Amazon](https://www.amazon.com/gp/product/B08BKLX1DC) |
+| LED heatsink | Amazon part | 1 | 20 × 20 × 10 mm | [Amazon](https://www.amazon.com/gp/product/B08BKLX1DC) |
 | TO-220 heatsink (LM317) | Amazon part | 6 | 10 × 15 × 20 mm | [Amazon](https://www.amazon.com/gp/product/B08MW1YNJM), [alt](https://www.amazon.com/gp/product/B0CG91KN14) |
-| Thermal paste | — | as needed | | |
-| Epoxy | — | as needed | | |
+| Thermal paste | — | as needed | LM317 TO-220 tabs only | |
+| Insulating thermal tape | 3M 8810 | 1 | LED pad — the pad is electrically live, so no paste or epoxy there | [Adafruit](https://www.adafruit.com/product/1467) |
+| Epoxy | — | as needed | Not on the LED pad | |
 
 ## Hardware status
 

@@ -34,8 +34,9 @@ M3 Countersunk Screws			PN?					4	M3 x 12mm
 
 Heatsink:
 Item					Value/PN				Qty	Dimensions				Link
-LED Heatsink				Amazon part				2	20mm x 20mm x 10mm			https://www.amazon.com/gp/product/B08BKLX1DC
+LED Heatsink				Amazon part				1	20mm x 20mm x 10mm			https://www.amazon.com/gp/product/B08BKLX1DC
 TO-220 Heatsink (LM317)			Amazon part				6	10mm x 15mm x 20mm			https://www.amazon.com/gp/product/B08MW1YNJM
 											alt: https://www.amazon.com/gp/product/B0CG91KN14
-Thermal Paste				-					A/R
-Epoxy					-					A/R
+Thermal Paste				-					A/R	LM317 TO-220 tabs only
+3M 8810 Insulating Thermal Tape	3M 8810				1	LED pad (pad is electrically live - no paste or epoxy there)	https://www.adafruit.com/product/1467
+Epoxy					-					A/R	Not on LED pad (use 3M 8810 tape there)
