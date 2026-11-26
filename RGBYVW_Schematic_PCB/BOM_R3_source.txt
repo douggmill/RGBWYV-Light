@@ -22,13 +22,13 @@ U10				nRF52840_XAIO		1
 
 Hardware:
 Item					Value/PN				Qty	Dimensions / Rating / Notes			Link
-Wooden Box				Amazon part				1	95.5 x 87 x 62mm outer (3.75" x 3 1/8" x 2.5")	https://www.amazon.com/dp/B0B51L68YK
-Reflector Cone				Amazon part				1	48mm mouth, 12mm LED hole; shorten to 27.8mm (flush with lid)	https://www.amazon.com/dp/B07MS8N2DS
+Wooden Box				Amazon part				1	95.5 x 87 x 62mm outer (3.75" x 3 1/8" x 2.5"), 3mm floor, 22mm lid	https://www.amazon.com/dp/B0B51L68YK
+Reflector Cone				Amazon part				1	48mm mouth, 12mm LED hole; cut to 29.2mm = flush with lid (listed 1.25in = 31.75mm, trim ~2.6mm)	https://www.amazon.com/dp/B07MS8N2DS
 Fan 30x30x10mm				Sunon MF30100V1-1000U-A99		1	5VDC 0.6W 5.5CFM, 24mm holes (check voltage vs circuit)	https://www.digikey.com/en/products/detail/sunon-fans/MF30100V1-1000U-A99/10441403
 Fan Grill, 3D printed (PLA/PETG)	mechanical/parts/fan_grill_30mm.stl	1	36 x 36 x 2mm, outside of floor
-M3 Flat Head Screws (fan grill)		ISO 10642 / DIN 7991			4	M3 x 22mm (grill 2 + floor 7 + fan 10)
+M3 Flat Head Screws (fan grill)		ISO 10642 / DIN 7991			4	M3 x 18mm (grill 2 + floor 3 + fan 10 = 15, + 1.8mm thin nut)
 M3 Thin Nuts (fan grill)		DIN 439					4	M3, 1.8mm thick, on top of the fan
-2.1mm DC Power Jack			uxcell B01C8CRCJ4			1	Chassis mount, threaded, >3A			https://www.amazon.com/dp/B01C8CRCJ4
+2.1mm DC Power Jack			uxcell a14103100ux0223 (B01C8CRCJ4)	1	2.1 x 5.5mm, M8 panel mount, 3 lugs, 20mm overall (measured); 8.2mm hole + 12mm inside counterbore	https://www.amazon.com/dp/B01C8CRCJ4
 USB-C Breakout Board (horizontal)	Amabro B0H9S9C73Q			1	Chassis mount, slot horizontal; plate glued in its inside wall pocket (no face screws)	https://www.amazon.com/dp/B0H9S9C73Q
 3.5mm Stereo Audio Jack (TRS)		CESS 318 B00ZYWILMS			1	Panel mount, M6 thread, solder lugs; $6.99 per 5-pack	https://www.amazon.com/dp/B00ZYWILMS
 Screw Terminals 2.54mm pitch (J1 2P, J2 3P, J3 4P)	JSZAAHZ 46-pc kit B0FCXV6GT3	1	KF128/DG308-2.54 style, 150V 6A, 26-18AWG; $14.99 kit (uses 1x 2P, 1x 3P, 1x 4P); dims assumed from XY308-2.54	https://www.amazon.com/dp/B0FCXV6GT3
@@ -36,9 +36,9 @@ AHT20 Temp/Humidity Module		UMLIFE B09B9ZWSDZ			1	15.11 x 10.41mm, 4-pin 2.54mm 
 Male Pin Header 2.54mm, breakaway 1x40	PN?					1	18 pins used: XIAO 2 x 1x7 + AHT20 1x4, 2.54mm plastic
 Vent Eyelets (connector face)		chrome, 5mm ID				5	Already on Doug's box
 Enclosure Feet				source unknown				4	5mm dia x 5mm tall; grill sits 3mm above the table
-M3 Standoffs				PN?					4	23.4mm measured (non-standard): M3x23 + 0.4mm washer, or stack M3x20 + M3x3
+M3 Standoffs				M3 x 26mm F-F				4	M3 x 26mm female-female (measured)
 M3 Button Head Screws			PN?					4	M3 x 5-6mm (board to standoffs)
-M3 Countersunk Screws			PN?					4	M3 x 12mm (floor to standoffs)
+M3 Countersunk Screws			PN?					4	M3 x 8mm (3mm floor -> 5mm into the standoff)
 
 Heatsink:
 Item					Value/PN				Qty	Dimensions / Notes				Link

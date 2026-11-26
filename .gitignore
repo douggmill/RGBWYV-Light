@@ -9,3 +9,14 @@ __pycache__/
 .history/
 *.lck
 fp-info-cache
+
+# FreeCAD backups
+*.FCBak
+*.FCStd1
+# KiCad autosave / backup files
+_autosave-*
+*-bak
+~*.lck
+# temp / logs / scratch
+*.log
+.ship*

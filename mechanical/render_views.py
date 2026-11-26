@@ -13,7 +13,7 @@ try:
     for o in doc.Objects:
         try: o.ViewObject.Visibility=False
         except Exception: pass
-    show=["PCB_Board","PCB_Components","WoodBox","WoodLid","ReflectorCone","ThermalPad_uxcell","Heatsink_LED_uxcell_30x20x10","Fan_3010","FanGrill_3Dprinted_36mm","GrillScrews_M3_FH_x4","Feet_5x5_x4","DC_Jack_Adafruit610","USB_C_Amabro_B0H9S9C73Q","Audio_CESS318_3p5mm_TRS","XIAO_nRF52840_U10","AHT20_UMLIFE_module","Vent_Eyelets_x5","LED_D2_placeholder","J1_ScrewTerminal_2p54_2P","J2_ScrewTerminal_2p54_3P","J3_ScrewTerminal_2p54_4P"]
+    show=["PCB_Board","PCB_Components","WoodBox","WoodLid","ReflectorCone","ThermalPad_uxcell","Heatsink_LED_uxcell_30x20x10","Fan_3010","FanGrill_3Dprinted_36mm","GrillScrews_M3_FH_x4","Feet_5x5_x4","DC_Jack_uxcell_B01C8CRCJ4","USB_C_Amabro_B0H9S9C73Q","Audio_CESS318_3p5mm_TRS","XIAO_nRF52840_U10","AHT20_UMLIFE_module","Vent_Eyelets_x5","LED_D2_placeholder","J1_ScrewTerminal_2p54_2P","J2_ScrewTerminal_2p54_3P","J3_ScrewTerminal_2p54_4P"]
     show+=[o.Name for o in doc.Objects if o.Name.startswith(("Heatsink_TO220","Standoff_","Screw_M3_","PinHeader_"))]
     for n in show: doc.getObject(n).ViewObject.Visibility=True
     O=os.path.join(HERE,"renders")+os.sep; os.makedirs(O,exist_ok=True)
