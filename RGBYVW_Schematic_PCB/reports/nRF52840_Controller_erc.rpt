@@ -1,0 +1,22 @@
+ERC report (2026-11-25T18:09:36, Encoding UTF8)
+Report includes: Errors, Warnings
+
+***** Sheet /
+[footprint_link_issues]: The current configuration does not include the footprint library 'A_USER_FOOTPRINTS'
+    ; warning
+    @(135.89 mm, 73.66 mm): Symbol U1a2 [XIAO_nRF52840]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'User'
+    ; warning
+    @(135.89 mm, 73.66 mm): Symbol U1a2 [XIAO_nRF52840]
+[multiple_net_names]: Both BL and 3V3 are attached to the same items; BL will be used in the netlist
+    ; warning
+    @(162.56 mm, 93.98 mm): Global Label 'BL'
+    @(186.69 mm, 20.32 mm): Symbol #PWR09 Pin 1 [Power input, Line]
+
+ ** ERC messages: 3  Errors 0  Warnings 3
+
+ ** Ignored checks:
+    - Global label only appears once in the schematic
+    - Four connection points are joined together
+    - SPICE model issue
+    - Assigned footprint doesn't match footprint filters

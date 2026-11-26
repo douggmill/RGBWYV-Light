@@ -10,6 +10,121 @@
 		(rev "A")
 	)
 	(lib_symbols
+(symbol "power:PWR_FLAG"
+		(power global)
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "#FLG"
+			(at 0 1.905 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 0 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "flag power"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "PWR_FLAG_0_0"
+			(pin power_out line
+				(at 0 0 90)
+				(length 0)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(symbol "PWR_FLAG_0_1"
+			(polyline
+				(pts
+					(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
 		(symbol "A_USER_Library:XIAO_nRF52840"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -3875,10 +3990,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f8f93eeb-b978-4a60-8902-db57e9950006")
-	)
-	(no_connect
-		(at 123.19 176.53)
-		(uuid "5e09b435-45e0-4ecb-97d3-d4ebd8915bd2")
 	)
 	(wire
 		(pts
@@ -9868,7 +9979,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 159.004 118.364 90)
 			(effects
 				(font
@@ -10638,7 +10749,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 159.004 138.684 90)
 			(effects
 				(font
@@ -12457,7 +12568,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 159.004 35.814 90)
 			(effects
 				(font
@@ -13361,7 +13472,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 159.004 57.404 90)
 			(effects
 				(font
@@ -13784,7 +13895,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 159.004 77.724 90)
 			(effects
 				(font
@@ -13870,7 +13981,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 159.004 98.044 90)
 			(effects
 				(font
@@ -14510,6 +14621,12 @@
 			)
 		)
 	)
+	(no_connect (at 132.08 86.36) (uuid "55446d5c-06e1-44d9-97e1-a6be82277b3a"))
+	(no_connect (at 132.08 88.9) (uuid "24a91ef7-7cab-4915-9999-5febba87e673"))
+	(symbol (lib_id "power:PWR_FLAG") (at 41.91 100.33 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "6d70410f-90fe-449e-ba35-1fadc9fb8960") (property "Reference" "#FLG01" (at 41.91 97.33 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Value" "PWR_FLAG" (at 41.91 100.33 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Footprint" "" (at 41.91 100.33 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 41.91 100.33 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "8f3df3d1-7bfd-44d9-90ef-23d975ac21a8")) (instances (project "6 pin LED nRF52840" (path "/3d2a59a4-55d1-4bce-8447-fa4c2bb736dc" (reference "#FLG01") (unit 1)))))
+	(symbol (lib_id "power:PWR_FLAG") (at 41.91 120.65 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "6d660e82-f547-43ee-ab27-7ffe021233b1") (property "Reference" "#FLG02" (at 41.91 117.65 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Value" "PWR_FLAG" (at 41.91 120.65 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Footprint" "" (at 41.91 120.65 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 41.91 120.65 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "7d9d8264-1c3b-4626-b28d-7017b7fa2a95")) (instances (project "6 pin LED nRF52840" (path "/3d2a59a4-55d1-4bce-8447-fa4c2bb736dc" (reference "#FLG02") (unit 1)))))
+	(symbol (lib_id "power:PWR_FLAG") (at 25.4 49.53 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "69bc4791-4f7c-48e8-b22d-a6f6513c95d4") (property "Reference" "#FLG03" (at 25.4 46.53 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Value" "PWR_FLAG" (at 25.4 49.53 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Footprint" "" (at 25.4 49.53 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 25.4 49.53 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "a4389285-038c-44cb-8134-80ba462d696f")) (instances (project "6 pin LED nRF52840" (path "/3d2a59a4-55d1-4bce-8447-fa4c2bb736dc" (reference "#FLG03") (unit 1)))))
+	(symbol (lib_id "power:PWR_FLAG") (at 95.25 97.79 270) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "da8a782d-85ef-4563-b953-0e2505b29d8c") (property "Reference" "#FLG04" (at 95.25 94.79 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Value" "PWR_FLAG" (at 95.25 97.79 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Footprint" "" (at 95.25 97.79 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 95.25 97.79 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "adcb6f63-df36-4d43-9f69-4e8a11e53d3d")) (instances (project "6 pin LED nRF52840" (path "/3d2a59a4-55d1-4bce-8447-fa4c2bb736dc" (reference "#FLG04") (unit 1)))))
 	(sheet_instances
 		(path "/"
 			(page "1")

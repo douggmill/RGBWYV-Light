@@ -5,6 +5,121 @@
 	(uuid "72dc827c-5e21-4ada-bac8-dae0e616eaa1")
 	(paper "A4")
 	(lib_symbols
+(symbol "power:PWR_FLAG"
+		(power global)
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "#FLG"
+			(at 0 1.905 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 0 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "flag power"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "PWR_FLAG_0_0"
+			(pin power_out line
+				(at 0 0 90)
+				(length 0)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(symbol "PWR_FLAG_0_1"
+			(polyline
+				(pts
+					(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
 		(symbol "Audio:MSGEQ7"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -3969,10 +4084,6 @@
 		(color 0 0 0 0)
 		(uuid "fe4dc424-284d-4370-a9db-6647fa9996bd")
 	)
-	(no_connect
-		(at 137.16 175.26)
-		(uuid "82facb1e-a080-4cb6-9c03-682d54b61c87")
-	)
 	(wire
 		(pts
 			(xy 255.27 59.69) (xy 234.95 59.69)
@@ -4572,16 +4683,6 @@
 			(type default)
 		)
 		(uuid "799eaac5-3310-44fd-b1a7-92bb328bb7e7")
-	)
-	(wire
-		(pts
-			(xy 92.71 102.87) (xy 92.71 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7a57a195-2963-4e37-a79e-83e59fea81cc")
 	)
 	(wire
 		(pts
@@ -9680,7 +9781,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_SMA"
 			(at 101.6 104.14 0)
 			(effects
 				(font
@@ -9750,7 +9851,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"
 			(at 129.54 26.67 0)
 			(effects
 				(font
@@ -12327,7 +12428,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Fuse:Fuse_BelFuse_0ZRE0025FF_L9.6mm_W3.8mm"
 			(at 52.07 102.87 0)
 			(effects
 				(font
@@ -12460,7 +12561,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "A_USER_FOOTPRINTS:XAIO-nRF528400-TTH"
 			(at 132.08 67.31 0)
 			(effects
 				(font
@@ -14190,7 +14291,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Horizontal_TabDown"
 			(at 79.375 107.95 0)
 			(effects
 				(font
@@ -14400,6 +14501,11 @@
 			)
 		)
 	)
+	(symbol (lib_id "power:PWR_FLAG") (at 41.91 55.88 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "3c6842ee-35dd-40d3-83a8-10f3b3b7eae6") (property "Reference" "#FLG01" (at 41.91 52.88 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Value" "PWR_FLAG" (at 41.91 55.88 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Footprint" "" (at 41.91 55.88 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 41.91 55.88 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "866257bd-bce6-491b-9152-bc5ded26bbdb")) (instances (project "RGBYVW_R2" (path "/72dc827c-5e21-4ada-bac8-dae0e616eaa1" (reference "#FLG01") (unit 1)))))
+	(symbol (lib_id "power:PWR_FLAG") (at 55.88 99.06 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "356a6f54-6490-4a8b-9121-58a9c1d6f58f") (property "Reference" "#FLG02" (at 55.88 96.06 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Value" "PWR_FLAG" (at 55.88 99.06 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Footprint" "" (at 55.88 99.06 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 55.88 99.06 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "d0181e01-c877-4250-817e-c3b45d65830b")) (instances (project "RGBYVW_R2" (path "/72dc827c-5e21-4ada-bac8-dae0e616eaa1" (reference "#FLG02") (unit 1)))))
+	(symbol (lib_id "power:PWR_FLAG") (at 55.88 119.38 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "b74559bf-e2ae-4864-bb10-e2b4edee99b3") (property "Reference" "#FLG03" (at 55.88 116.38 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Value" "PWR_FLAG" (at 55.88 119.38 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Footprint" "" (at 55.88 119.38 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 55.88 119.38 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "14423fec-fed7-43f5-86c9-dd33f79dbb72")) (instances (project "RGBYVW_R2" (path "/72dc827c-5e21-4ada-bac8-dae0e616eaa1" (reference "#FLG03") (unit 1)))))
+	(symbol (lib_id "power:PWR_FLAG") (at 71.12 104.14 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "81e98649-878c-4444-9d9f-fcf9062b8819") (property "Reference" "#FLG04" (at 71.12 101.14 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Value" "PWR_FLAG" (at 71.12 100.33 0) (effects (font (size 1.27 1.27)))) (property "Footprint" "" (at 71.12 104.14 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 71.12 104.14 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "30ac70c8-b437-4498-92b7-1d69e8a5e11c")) (instances (project "RGBYVW_R2" (path "/72dc827c-5e21-4ada-bac8-dae0e616eaa1" (reference "#FLG04") (unit 1)))))
+	(symbol (lib_id "power:PWR_FLAG") (at 124.46 21.59 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "659349a1-02f0-47e3-92dd-f51d8e11a407") (property "Reference" "#FLG05" (at 124.46 18.59 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Value" "PWR_FLAG" (at 124.46 21.59 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Footprint" "" (at 124.46 21.59 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 124.46 21.59 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "b773b2b8-8128-4b77-8bd1-52be382017a0")) (instances (project "RGBYVW_R2" (path "/72dc827c-5e21-4ada-bac8-dae0e616eaa1" (reference "#FLG05") (unit 1)))))
 	(sheet_instances
 		(path "/"
 			(page "1")

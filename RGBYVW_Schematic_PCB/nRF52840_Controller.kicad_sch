@@ -5,6 +5,121 @@
 	(uuid "520c7bf9-f06b-4019-b029-2ff522bf9809")
 	(paper "A4")
 	(lib_symbols
+(symbol "power:PWR_FLAG"
+		(power global)
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "#FLG"
+			(at 0 1.905 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 0 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "flag power"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "PWR_FLAG_0_0"
+			(pin power_out line
+				(at 0 0 90)
+				(length 0)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(symbol "PWR_FLAG_0_1"
+			(polyline
+				(pts
+					(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
 		(symbol "Audio:MSGEQ7"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -2583,10 +2698,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fccca744-89d9-469b-9c53-f47df5e2c8c8")
-	)
-	(no_connect
-		(at 129.54 172.72)
-		(uuid "8b26bfb2-dd19-43c9-98ea-574803f9e7e9")
 	)
 	(wire
 		(pts
@@ -7319,7 +7430,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:CP_Radial_D10.0mm_P3.80mm"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 96.2152 40.64 0)
 			(effects
 				(font
@@ -7809,7 +7920,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"
 			(at 191.77 25.4 0)
 			(effects
 				(font
@@ -7884,7 +7995,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:CP_Radial_D10.0mm_P3.80mm"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
 			(at 65.0748 66.04 0)
 			(effects
 				(font
@@ -7969,7 +8080,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "A_USER_FOOTPRINTS:XAIO-nRF528400-TTH"
 			(at 135.89 73.66 0)
 			(effects
 				(font
@@ -8074,7 +8185,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:CP_Radial_D10.0mm_P3.80mm"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 105.1052 74.93 0)
 			(effects
 				(font
@@ -8684,7 +8795,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Fuse:Fuse_BelFuse_0ZRE0025FF_L9.6mm_W3.8mm"
 			(at 44.45 100.33 0)
 			(effects
 				(font
@@ -8822,7 +8933,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical"
 			(at 181.61 83.82 0)
 			(effects
 				(font
@@ -8909,7 +9020,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-8_W7.62mm"
 			(at 88.9 58.42 0)
 			(effects
 				(font
@@ -8996,7 +9107,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:CP_Radial_D10.0mm_P3.80mm"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 73.66 57.4548 0)
 			(effects
 				(font
@@ -9149,7 +9260,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TerminalBlock:TerminalBlock_Xinya_XY308-2.54-3P_1x03_P2.54mm_Horizontal"
 			(at 52.07 31.75 0)
 			(effects
 				(font
@@ -9194,6 +9305,11 @@
 			)
 		)
 	)
+	(no_connect (at 147.32 81.28) (uuid "395f4bd8-ab66-49a6-82e5-d53fc59989b3"))
+	(symbol (lib_id "power:PWR_FLAG") (at 45.72 62.23 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "eb39835c-0ad7-4f61-9759-5e83cb372b7c") (property "Reference" "#FLG01" (at 45.72 59.23 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Value" "PWR_FLAG" (at 45.72 62.23 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Footprint" "" (at 45.72 62.23 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 45.72 62.23 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "408bf837-2ea2-4164-a0e9-946b97192105")) (instances (project "nRF52840_Controller" (path "/520c7bf9-f06b-4019-b029-2ff522bf9809" (reference "#FLG01") (unit 1)))))
+	(symbol (lib_id "power:PWR_FLAG") (at 48.26 96.52 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "f170f186-a233-4443-92ec-b639832ee323") (property "Reference" "#FLG02" (at 48.26 93.52 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Value" "PWR_FLAG" (at 48.26 96.52 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Footprint" "" (at 48.26 96.52 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 48.26 96.52 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "4bd8349f-846b-4052-b2ea-2c862ef7895b")) (instances (project "nRF52840_Controller" (path "/520c7bf9-f06b-4019-b029-2ff522bf9809" (reference "#FLG02") (unit 1)))))
+	(symbol (lib_id "power:PWR_FLAG") (at 48.26 116.84 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "623e9355-f12d-435e-9def-013d91c12e06") (property "Reference" "#FLG03" (at 48.26 113.84 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Value" "PWR_FLAG" (at 48.26 116.84 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Footprint" "" (at 48.26 116.84 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 48.26 116.84 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "545613a4-43ab-4088-8f65-94ac3e0175b3")) (instances (project "nRF52840_Controller" (path "/520c7bf9-f06b-4019-b029-2ff522bf9809" (reference "#FLG03") (unit 1)))))
+	(symbol (lib_id "power:PWR_FLAG") (at 186.69 20.32 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "779983b8-1b5c-4c6c-b2b3-5005791d4334") (property "Reference" "#FLG04" (at 186.69 17.32 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Value" "PWR_FLAG" (at 186.69 20.32 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Footprint" "" (at 186.69 20.32 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 186.69 20.32 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "15e2f55e-41a6-4945-95e1-213cc92f7f43")) (instances (project "nRF52840_Controller" (path "/520c7bf9-f06b-4019-b029-2ff522bf9809" (reference "#FLG04") (unit 1)))))
 	(sheet_instances
 		(path "/"
 			(page "1")
