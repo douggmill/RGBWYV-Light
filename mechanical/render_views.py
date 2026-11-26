@@ -13,7 +13,7 @@ try:
     for o in doc.Objects:
         try: o.ViewObject.Visibility=False
         except Exception: pass
-    show=["PCB_Board","PCB_Components","WoodBox","WoodLid","ReflectorCone","Tape_3M8810","Heatsink_LED_20x20x10","Fan_3010","FanGuard_Qualtek_08346","DC_Jack_Adafruit610","Switch_Adafruit916","USB_C_Amabro_B0H9S9C73Q","Audio_Adafruit3692","XIAO_nRF52840_U10","AHT20_Adafruit4566","Vent_Eyelets_x5","FaceScrews_x2","LED_D2_placeholder","J1_TerminalBlock_approx"]
+    show=["PCB_Board","PCB_Components","WoodBox","WoodLid","ReflectorCone","ThermalPad_uxcell","Heatsink_LED_uxcell_30x20x10","Fan_3010","FanGrill_3Dprinted_36mm","GrillScrews_M3_FH_x4","DC_Jack_Adafruit610","USB_C_Amabro_B0H9S9C73Q","Audio_Adafruit3692","XIAO_nRF52840_U10","AHT20_UMLIFE_module","Vent_Eyelets_x5","FaceScrews_x2","LED_D2_placeholder","J1_TerminalBlock_approx"]
     show+=[o.Name for o in doc.Objects if o.Name.startswith(("Heatsink_TO220","Standoff_","Screw_M3_","XIAO_Riser","XIAO_MaleHdr"))]
     for n in show: doc.getObject(n).ViewObject.Visibility=True
     O=os.path.join(HERE,"renders")+os.sep; os.makedirs(O,exist_ok=True)
@@ -25,7 +25,7 @@ try:
     for nm, zv in (("assembly_connector_face.png", (-1, 0, 0)), ("assembly_connector_iso.png", (-1, -0.7, 0.6))):
         v.viewIsometric(); zl=App.Vector(*zv).normalize(); up=App.Vector(0,0,1); yl=(up-zl*(up.dot(zl))).normalize(); xl=yl.cross(zl)
         v.setCameraOrientation(App.Rotation(xl,yl,zl,"ZYX")); v.fitAll(); v.saveImage(O+nm,1600,1200,"White")
-    shot("assembly_bottom_guard.png","viewBottom")
+    shot("assembly_bottom_grill.png","viewBottom")
     v.viewIsometric(); zl=App.Vector(1,-1,-1).normalize(); up=App.Vector(0,0,1); yl=(up-zl*(up.dot(zl))).normalize(); xl=yl.cross(zl); v.setCameraOrientation(App.Rotation(xl,yl,zl,"ZYX")); v.fitAll(); v.saveImage(O+"assembly_underside_iso.png",1600,1200,"White")
     doc.getObject("WoodBox").ViewObject.Transparency=75; doc.getObject("WoodLid").ViewObject.Transparency=75
     shot("assembly_iso_transparent.png","viewIsometric")
