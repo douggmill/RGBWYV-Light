@@ -38,7 +38,7 @@ M3 Countersunk Screws			PN?					4	M3 x 12mm
 Heatsink:
 Item					Value/PN				Qty	Dimensions				Link
 LED Heatsink				uxcell 30x20x10 (10-pack)			1	$9.99 per 10-pack, blue, pre-applied thermal pad	https://www.amazon.com/dp/B093V778LH
-TO-220 Heatsink (LM317)			Adam Tech HSK-059-04			6	$1.37 ea, 35mm cut to 22.5mm; U5/U7 fin tips filed to 5.0mm; Digi-Key 2057-HSK-059-04-ND	https://www.digikey.com/en/products/detail/adam-tech/HSK-059-04/26224094
+TO-220 Heatsink (LM317)			Adam Tech HSK-059-04			6	$1.37 ea, 35mm cut to 20.0mm; U5/U7 fin tips filed to 5.0mm; Digi-Key 2057-HSK-059-04-ND	https://www.digikey.com/en/products/detail/adam-tech/HSK-059-04/26224094
 											alt: https://www.amazon.com/gp/product/B0CG91KN14
 Thermal Paste				-					A/R	LM317 TO-220 tabs only
 3M 8810 Insulating Thermal Tape	3M 8810				1	LED pad (pad is electrically live - no paste or epoxy there)	https://www.adafruit.com/product/1467
