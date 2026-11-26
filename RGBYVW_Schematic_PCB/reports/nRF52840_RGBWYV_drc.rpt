@@ -1,5 +1,5 @@
 ** Drc report for nRF52840_RGBWYV.kicad_pcb **
-** Created on 2026-11-25T18:09:34 **
+** Created on 2026-11-25T18:11:33 **
 ** Report includes: Errors, Warnings **
 
 ** Found 42 DRC violations **
@@ -132,7 +132,25 @@
 
 ** Found 0 unconnected pads **
 
-** Found 0 Footprint errors **
+** Found 9 Footprint errors **
+[missing_footprint]: Missing footprint C8 (0.1uF XR7 0603)
+    Local override; warning
+[missing_footprint]: Missing footprint D3 (SDM05U20S3-7 20V 500mA)
+    Local override; warning
+[missing_footprint]: Missing footprint J4 (Fan WINSINN 2010)
+    Local override; warning
+[missing_footprint]: Missing footprint Q7 (IRLML6244)
+    Local override; warning
+[missing_footprint]: Missing footprint R16 (100Ω)
+    Local override; warning
+[missing_footprint]: Missing footprint R17 (10kΩ)
+    Local override; warning
+[missing_footprint]: Missing footprint R18 (10kΩ)
+    Local override; warning
+[missing_footprint]: Missing footprint R19 (10kΩ)
+    Local override; warning
+[missing_footprint]: Missing footprint U3 (PCF8574T)
+    Local override; warning
 
 ** Ignored checks **
     - Footprint has no courtyard defined

@@ -10,6 +10,552 @@
 		(rev "A")
 	)
 	(lib_symbols
+(symbol "Connector_Generic:Conn_01x02"
+		(pin_names
+			(offset 1.016)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "J"
+			(at 0 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x02"
+			(at 0 -5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "connector"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "Connector*:*_1x??_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "Conn_01x02_1_1"
+			(rectangle
+				(start -1.27 1.27)
+				(end 1.27 -3.81)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+			(rectangle
+				(start -1.27 0.127)
+				(end 0 -0.127)
+				(stroke
+					(width 0.1524)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(rectangle
+				(start -1.27 -2.413)
+				(end 0 -2.667)
+				(stroke
+					(width 0.1524)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(pin passive line
+				(at -5.08 0 0)
+				(length 3.81)
+				(name "Pin_1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -5.08 -2.54 0)
+				(length 3.81)
+				(name "Pin_2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+(symbol "Interface_Expansion:PCF8574T"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(embedded_fonts no)
+		(property "Reference" "U"
+			(at -7.112 14.732 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PCF8574T"
+			(at 3.302 14.732 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.nxp.com/docs/en/data-sheet/PCF8574_PCF8574A.pdf"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "8-bit I/O Expander, I2C interface, interrupt output, fixed address bits 0b0100xxx, SOIC-16"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "NXP Port-Expander"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "*SOIC*7.5x10.3mm?P1.27mm*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "PCF8574T_0_1"
+			(rectangle
+				(start -7.62 12.7)
+				(end 7.62 -10.16)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+		)
+		(symbol "PCF8574T_1_1"
+			(pin input line
+				(at -10.16 -2.54 0)
+				(length 2.54)
+				(name "A0"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at -10.16 -5.08 0)
+				(length 2.54)
+				(name "A1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at -10.16 -7.62 0)
+				(length 2.54)
+				(name "A2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin bidirectional line
+				(at 10.16 10.16 180)
+				(length 2.54)
+				(name "P0"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin bidirectional line
+				(at 10.16 7.62 180)
+				(length 2.54)
+				(name "P1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin bidirectional line
+				(at 10.16 5.08 180)
+				(length 2.54)
+				(name "P2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin bidirectional line
+				(at 10.16 2.54 180)
+				(length 2.54)
+				(name "P3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "7"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at 0 -12.7 90)
+				(length 2.54)
+				(name "GND"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "8"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin bidirectional line
+				(at 10.16 0 180)
+				(length 2.54)
+				(name "P4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin bidirectional line
+				(at 10.16 -2.54 180)
+				(length 2.54)
+				(name "P5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "10"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin bidirectional line
+				(at 10.16 -5.08 180)
+				(length 2.54)
+				(name "P6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "11"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin bidirectional line
+				(at 10.16 -7.62 180)
+				(length 2.54)
+				(name "P7"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin open_collector line
+				(at -10.16 2.54 0)
+				(length 2.54)
+				(name "~{INT}"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "13"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at -10.16 10.16 0)
+				(length 2.54)
+				(name "SCL"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin bidirectional line
+				(at -10.16 7.62 0)
+				(length 2.54)
+				(name "SDA"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "15"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at 0 15.24 270)
+				(length 2.54)
+				(name "VDD"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "16"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+	)
 (symbol "power:PWR_FLAG"
 		(power global)
 		(pin_numbers
@@ -14627,6 +15173,62 @@
 	(symbol (lib_id "power:PWR_FLAG") (at 41.91 120.65 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "6d660e82-f547-43ee-ab27-7ffe021233b1") (property "Reference" "#FLG02" (at 41.91 117.65 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Value" "PWR_FLAG" (at 41.91 120.65 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Footprint" "" (at 41.91 120.65 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 41.91 120.65 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "7d9d8264-1c3b-4626-b28d-7017b7fa2a95")) (instances (project "6 pin LED nRF52840" (path "/3d2a59a4-55d1-4bce-8447-fa4c2bb736dc" (reference "#FLG02") (unit 1)))))
 	(symbol (lib_id "power:PWR_FLAG") (at 25.4 49.53 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "69bc4791-4f7c-48e8-b22d-a6f6513c95d4") (property "Reference" "#FLG03" (at 25.4 46.53 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Value" "PWR_FLAG" (at 25.4 49.53 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Footprint" "" (at 25.4 49.53 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 25.4 49.53 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "a4389285-038c-44cb-8134-80ba462d696f")) (instances (project "6 pin LED nRF52840" (path "/3d2a59a4-55d1-4bce-8447-fa4c2bb736dc" (reference "#FLG03") (unit 1)))))
 	(symbol (lib_id "power:PWR_FLAG") (at 95.25 97.79 270) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "da8a782d-85ef-4563-b953-0e2505b29d8c") (property "Reference" "#FLG04" (at 95.25 94.79 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Value" "PWR_FLAG" (at 95.25 97.79 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Footprint" "" (at 95.25 97.79 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 95.25 97.79 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "adcb6f63-df36-4d43-9f69-4e8a11e53d3d")) (instances (project "6 pin LED nRF52840" (path "/3d2a59a4-55d1-4bce-8447-fa4c2bb736dc" (reference "#FLG04") (unit 1)))))
+	(symbol (lib_id "Interface_Expansion:PCF8574T") (at 119.38 124.46 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "9a9af8a1-b556-4c56-8603-91d03d6ba6af") (property "Reference" "U3" (at 127.0 109.22 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "PCF8574T" (at 121.92 138.43 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm" (at 119.38 124.46 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 119.38 124.46 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Description" "I2C fan-control expander, addr 0x20 (A2..A0 = GND)" (at 119.38 124.46 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "be62692e-615b-449d-8b0f-80c4224dd34b")) (pin "2" (uuid "e8faeb64-4720-41b2-b8e2-63a5c1ef79de")) (pin "3" (uuid "1d635166-4f1c-4887-80d2-24a02d140145")) (pin "4" (uuid "77f7b5d0-377c-4106-baa3-691d2398376d")) (pin "5" (uuid "9f806ca8-377c-4a8f-922f-6592df3eb524")) (pin "6" (uuid "09356418-c13e-402c-bd0a-e8359e4aba27")) (pin "7" (uuid "3b119bbb-50ed-4923-ad10-76f88acb3126")) (pin "8" (uuid "3a5c2397-c4bf-4f93-bb48-195fb2a25ea1")) (pin "9" (uuid "a757030f-caff-486b-b950-96bbb5ecfa46")) (pin "10" (uuid "950a3b1d-0713-443e-931e-cb3334b35792")) (pin "11" (uuid "ad9295c1-2312-425a-b741-66dce3411c0e")) (pin "12" (uuid "8b4ddfef-fc71-4b4d-a850-2f5a99155938")) (pin "13" (uuid "2582e0ce-f145-4ada-8fbf-f8547c7890d8")) (pin "14" (uuid "b5b9ac36-e3f6-4e7c-894c-605bdba873b9")) (pin "15" (uuid "42ce416c-3716-4f7d-9922-c8f148087a7a")) (pin "16" (uuid "9976c2c0-a63a-47b5-a665-03c555645a28")) (instances (project "6 pin LED nRF52840" (path "/3d2a59a4-55d1-4bce-8447-fa4c2bb736dc" (reference "U3") (unit 1)))))
+	(wire (pts (xy 109.22 114.3) (xy 104.14 114.3)) (stroke (width 0) (type default)) (uuid "be6da62f-2894-4c22-995c-5fd3bb23987d"))
+	(global_label "SCL" (shape input) (at 104.14 114.3 180) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify right)) (uuid "7d09fd3b-ccfe-41c0-b711-c3268d7c7a6b") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 104.14 114.3 0) (effects (font (size 1.27 1.27)) (hide yes))))
+	(wire (pts (xy 109.22 116.84) (xy 104.14 116.84)) (stroke (width 0) (type default)) (uuid "a4ab1d02-82ec-483a-9c85-45248f4a1415"))
+	(global_label "SDA" (shape input) (at 104.14 116.84 180) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify right)) (uuid "2dd427c4-e9a2-4b34-90da-2541ef4f09cb") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 104.14 116.84 0) (effects (font (size 1.27 1.27)) (hide yes))))
+	(no_connect (at 109.22 121.92) (uuid "c96a1578-bad3-449a-b3b8-af1a6c25262b"))
+	(wire (pts (xy 109.22 127.0) (xy 106.68 127.0)) (stroke (width 0) (type default)) (uuid "2069f501-cc46-4051-b7fc-f9c088054557"))
+	(wire (pts (xy 109.22 129.54) (xy 106.68 129.54)) (stroke (width 0) (type default)) (uuid "fbede10d-10b1-44e9-ab41-d96ac64a85e2"))
+	(wire (pts (xy 109.22 132.08) (xy 106.68 132.08)) (stroke (width 0) (type default)) (uuid "fe526a0c-d7a4-4fd3-a8ca-9dfde1ba87bf"))
+	(wire (pts (xy 106.68 127.0) (xy 106.68 134.62)) (stroke (width 0) (type default)) (uuid "3e20ebdc-b6ec-4803-b02a-18d084de7544"))
+	(junction (at 106.68 129.54) (diameter 0) (color 0 0 0 0) (uuid "07d88c35-b256-4573-af13-39411e79fc52"))
+	(junction (at 106.68 132.08) (diameter 0) (color 0 0 0 0) (uuid "148ae042-13ff-47ed-9fe3-3fa8f21c4785"))
+	(symbol (lib_id "power:GNDREF") (at 106.68 134.62 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "4f715f06-ffe0-4a1d-b3a5-78e48429b67c") (property "Reference" "#PWR22" (at 106.68 131.62 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Value" "GNDREF" (at 106.68 139.7 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Footprint" "" (at 106.68 134.62 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 106.68 134.62 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "4ae5385f-3a07-4135-a9f4-4f53b19428d9")) (instances (project "6 pin LED nRF52840" (path "/3d2a59a4-55d1-4bce-8447-fa4c2bb736dc" (reference "#PWR22") (unit 1)))))
+	(symbol (lib_id "power:GNDREF") (at 119.38 137.16 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "a1e87a09-6703-44b7-81e9-b052a2ffc99d") (property "Reference" "#PWR23" (at 119.38 134.16 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Value" "GNDREF" (at 119.38 142.24 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Footprint" "" (at 119.38 137.16 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 119.38 137.16 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "d10dd5bc-1a4a-4459-a2a7-ec75cfc7e664")) (instances (project "6 pin LED nRF52840" (path "/3d2a59a4-55d1-4bce-8447-fa4c2bb736dc" (reference "#PWR23") (unit 1)))))
+	(no_connect (at 129.54 114.3) (uuid "471bb769-ef39-4319-9cd6-300ce3271f57"))
+	(no_connect (at 129.54 116.84) (uuid "76a96538-e03a-4204-afad-936d982af417"))
+	(no_connect (at 129.54 121.92) (uuid "b06c031a-6a11-42e0-a711-c87c08d5bbfa"))
+	(no_connect (at 129.54 124.46) (uuid "80b6c375-307a-46b7-b3a6-f99a76bdedc8"))
+	(no_connect (at 129.54 127.0) (uuid "35c001fe-714d-431f-a666-5299f522936a"))
+	(no_connect (at 129.54 129.54) (uuid "1ad509da-7deb-4674-b94c-ffd048f68b56"))
+	(no_connect (at 129.54 132.08) (uuid "6b6db9b3-f1b7-4d74-8282-57fe8a81eb64"))
+	(wire (pts (xy 129.54 119.38) (xy 137.16 119.38)) (stroke (width 0) (type default)) (uuid "63f7cfaf-dad9-432c-a0ff-070c9f234f99"))
+	(label "FAN_EN" (at 137.16 119.38 90) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "d4b0c901-0e70-49e1-8a4e-5ddf69f51f04"))
+	(wire (pts (xy 119.38 109.22) (xy 119.38 104.14)) (stroke (width 0) (type default)) (uuid "1f37912c-5e48-4d62-8de3-f753252f00b8"))
+	(symbol (lib_id "Device:C") (at 115.57 104.14 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "ac2dcc0a-780a-40b0-9174-60b2adc00d13") (property "Reference" "C8" (at 113.03 100.33 90) (effects (font (size 1.27 1.27)))) (property "Value" "0.1uF XR7 0603" (at 115.57 97.79 90) (effects (font (size 1.27 1.27)))) (property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" (at 115.57 104.14 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 115.57 104.14 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "31ee177e-de0f-4085-8bf1-5ed952295c4f")) (pin "2" (uuid "ee351d45-1b27-4c76-b083-493449a0c8d9")) (instances (project "6 pin LED nRF52840" (path "/3d2a59a4-55d1-4bce-8447-fa4c2bb736dc" (reference "C8") (unit 1)))))
+	(symbol (lib_id "power:+5VD") (at 119.38 104.14 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "91cb67e4-116c-4b80-ab7d-3fd4377d9e55") (property "Reference" "#PWR24" (at 119.38 101.14 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Value" "3V3" (at 119.38 99.31 0) (effects (font (size 1.27 1.27)))) (property "Footprint" "" (at 119.38 104.14 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 119.38 104.14 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "f28eced1-b828-42d5-b036-4b80b467b7d6")) (instances (project "6 pin LED nRF52840" (path "/3d2a59a4-55d1-4bce-8447-fa4c2bb736dc" (reference "#PWR24") (unit 1)))))
+	(junction (at 119.38 104.14) (diameter 0) (color 0 0 0 0) (uuid "d311ec27-c406-45c9-ac50-88db27ae4321"))
+	(symbol (lib_id "power:GNDREF") (at 111.76 104.14 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "f93a7acf-7f13-4a66-be6f-5ae7f7a4cebf") (property "Reference" "#PWR25" (at 111.76 101.14 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Value" "GNDREF" (at 111.76 109.22 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Footprint" "" (at 111.76 104.14 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 111.76 104.14 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "c27bae6a-6fe2-4cf1-9373-959c65826cdd")) (instances (project "6 pin LED nRF52840" (path "/3d2a59a4-55d1-4bce-8447-fa4c2bb736dc" (reference "#PWR25") (unit 1)))))
+	(symbol (lib_id "Device:R_US") (at 30.48 137.16 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "385eda8d-07a0-4d29-a30d-c04f1f17618f") (property "Reference" "R18" (at 33.02 135.89 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "10kΩ" (at 33.02 138.43 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (at 30.48 137.16 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 30.48 137.16 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "20b779f1-54e9-42a8-8203-5f11f28f8b45")) (pin "2" (uuid "2a7e09e7-9faf-446a-b99a-d60a73b79f88")) (instances (project "6 pin LED nRF52840" (path "/3d2a59a4-55d1-4bce-8447-fa4c2bb736dc" (reference "R18") (unit 1)))))
+	(symbol (lib_id "power:+5VD") (at 30.48 133.35 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "be43449e-486f-4afd-a66e-861cbc7fd5f6") (property "Reference" "#PWR26" (at 30.48 130.35 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Value" "3V3" (at 30.48 128.52 0) (effects (font (size 1.27 1.27)))) (property "Footprint" "" (at 30.48 133.35 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 30.48 133.35 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "77fba035-c5dc-4a8f-94cc-fb592b2730a7")) (instances (project "6 pin LED nRF52840" (path "/3d2a59a4-55d1-4bce-8447-fa4c2bb736dc" (reference "#PWR26") (unit 1)))))
+	(global_label "SCL" (shape input) (at 30.48 140.97 0) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify left)) (uuid "83aeaf47-ddc5-47c4-a714-439550a793a5") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 30.48 140.97 0) (effects (font (size 1.27 1.27)) (hide yes))))
+	(symbol (lib_id "Device:R_US") (at 43.18 137.16 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "6d03b973-b02a-4a14-be4d-f78741c5000c") (property "Reference" "R19" (at 45.72 135.89 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "10kΩ" (at 45.72 138.43 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (at 43.18 137.16 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 43.18 137.16 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "8b431724-c036-46dc-a243-5c084f52e140")) (pin "2" (uuid "2f966787-95ff-4948-8a72-b4fa5007ba56")) (instances (project "6 pin LED nRF52840" (path "/3d2a59a4-55d1-4bce-8447-fa4c2bb736dc" (reference "R19") (unit 1)))))
+	(symbol (lib_id "power:+5VD") (at 43.18 133.35 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "07c04682-bcbf-4a9a-aac9-c31eb97529fe") (property "Reference" "#PWR27" (at 43.18 130.35 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Value" "3V3" (at 43.18 128.52 0) (effects (font (size 1.27 1.27)))) (property "Footprint" "" (at 43.18 133.35 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 43.18 133.35 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "3cdfcfa1-cbec-43bd-b775-cb9bd7a26aae")) (instances (project "6 pin LED nRF52840" (path "/3d2a59a4-55d1-4bce-8447-fa4c2bb736dc" (reference "#PWR27") (unit 1)))))
+	(global_label "SDA" (shape input) (at 43.18 140.97 0) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify left)) (uuid "0472004a-8220-4c0f-bb73-256600105bff") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 43.18 140.97 0) (effects (font (size 1.27 1.27)) (hide yes))))
+	(symbol (lib_id "Transistor_FET:IRLML6244") (at 77.47 134.62 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "fa8c511b-96f7-4fbe-92c3-cfa60cc0fac1") (property "Reference" "Q7" (at 82.55 133.35 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "IRLML6244" (at 82.55 135.89 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Package_TO_SOT_SMD:SOT-23" (at 77.47 134.62 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 77.47 134.62 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "5ba5a256-6e19-4ab7-9f49-f283580f0908")) (pin "2" (uuid "d793e3bd-132b-40b7-b589-d6e151f71fbe")) (pin "3" (uuid "a58735a6-1653-415c-bc5f-024f1107f23e")) (instances (project "6 pin LED nRF52840" (path "/3d2a59a4-55d1-4bce-8447-fa4c2bb736dc" (reference "Q7") (unit 1)))))
+	(symbol (lib_id "Device:R_US") (at 63.5 134.62 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "9fd3d017-5b79-494d-8719-703d83e5d1c9") (property "Reference" "R16" (at 63.5 129.54 90) (effects (font (size 1.27 1.27)))) (property "Value" "100Ω" (at 63.5 132.08 90) (effects (font (size 1.27 1.27)))) (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (at 63.5 134.62 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 63.5 134.62 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "11d2aae1-cbdb-492c-9294-ea12b20c035f")) (pin "2" (uuid "80b7becd-e755-4dd2-b6bb-dc3679eff0c4")) (instances (project "6 pin LED nRF52840" (path "/3d2a59a4-55d1-4bce-8447-fa4c2bb736dc" (reference "R16") (unit 1)))))
+	(symbol (lib_id "Device:R_US") (at 69.85 138.43 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "5d34ef11-5c5b-4370-a1ee-e511318daade") (property "Reference" "R17" (at 72.39 137.16 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "10kΩ" (at 72.39 139.7 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (at 69.85 138.43 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 69.85 138.43 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "305c3ed7-fabf-4dfa-9d4d-19daa67d1566")) (pin "2" (uuid "60dedade-ea67-49ed-ab23-80be5e019990")) (instances (project "6 pin LED nRF52840" (path "/3d2a59a4-55d1-4bce-8447-fa4c2bb736dc" (reference "R17") (unit 1)))))
+	(wire (pts (xy 67.31 134.62) (xy 69.85 134.62)) (stroke (width 0) (type default)) (uuid "0b70fc8a-c657-4065-baa2-6968435bcbc2"))
+	(wire (pts (xy 69.85 134.62) (xy 72.39 134.62)) (stroke (width 0) (type default)) (uuid "7466e8fe-89b3-4e1c-9510-e67047be97a7"))
+	(junction (at 69.85 134.62) (diameter 0) (color 0 0 0 0) (uuid "b4bd5384-3aa5-41fc-b457-3e48564724d5"))
+	(symbol (lib_id "power:GNDREF") (at 69.85 142.24 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "6daff0e4-71ee-4a47-94ba-8ae2cc5ac05e") (property "Reference" "#PWR28" (at 69.85 139.24 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Value" "GNDREF" (at 69.85 147.32 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Footprint" "" (at 69.85 142.24 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 69.85 142.24 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "6d24974b-1555-4a5c-ad83-384ebb5034ec")) (instances (project "6 pin LED nRF52840" (path "/3d2a59a4-55d1-4bce-8447-fa4c2bb736dc" (reference "#PWR28") (unit 1)))))
+	(wire (pts (xy 59.69 134.62) (xy 57.15 134.62)) (stroke (width 0) (type default)) (uuid "30d23af3-12ba-416c-8bb7-dd40f7a3a14a"))
+	(label "FAN_EN" (at 57.15 134.62 180) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "b5a7ecd2-a4de-47b7-9f02-722a1d991100"))
+	(symbol (lib_id "power:GNDREF") (at 80.01 139.7 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "6c5c89f6-9885-4bc3-a5e5-f327bb12038c") (property "Reference" "#PWR29" (at 80.01 136.7 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Value" "GNDREF" (at 80.01 144.78 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Footprint" "" (at 80.01 139.7 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 80.01 139.7 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "d5799915-5a78-418d-b5bc-9360e9c4f177")) (instances (project "6 pin LED nRF52840" (path "/3d2a59a4-55d1-4bce-8447-fa4c2bb736dc" (reference "#PWR29") (unit 1)))))
+	(symbol (lib_id "Device:D_Schottky") (at 83.82 127.0 270) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "8cfc0eec-596d-4ac8-a359-d3b23d87a4dd") (property "Reference" "D3" (at 80.01 125.73 90) (effects (font (size 1.27 1.27)))) (property "Value" "SDM05U20S3-7 20V 500mA" (at 67.31 121.92 90) (effects (font (size 1.27 1.27)))) (property "Footprint" "Diode_SMD:D_SOD-323_HandSoldering" (at 83.82 127.0 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 83.82 127.0 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "8e26a239-7f32-4300-bc3b-da0ff6b34ba3")) (pin "2" (uuid "97200697-7f73-4cbf-bf1b-7dfe964f05d7")) (instances (project "6 pin LED nRF52840" (path "/3d2a59a4-55d1-4bce-8447-fa4c2bb736dc" (reference "D3") (unit 1)))))
+	(symbol (lib_id "Connector_Generic:Conn_01x02") (at 93.98 123.19 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "df9061c4-618b-4316-9884-0035a2629c44") (property "Reference" "J4" (at 88.9 118.11 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "Fan WINSINN 2010" (at 88.9 120.65 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical" (at 93.98 123.19 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 93.98 123.19 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "cb8beeaa-209b-412c-b6c3-2645010d864b")) (pin "2" (uuid "c69e0553-c53d-4279-a328-8f6f9619a4b2")) (instances (project "6 pin LED nRF52840" (path "/3d2a59a4-55d1-4bce-8447-fa4c2bb736dc" (reference "J4") (unit 1)))))
+	(symbol (lib_id "power:+5VD") (at 83.82 120.65 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "11f3dc15-2a35-4c9c-b832-85997848ed10") (property "Reference" "#PWR30" (at 83.82 117.65 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Value" "5V" (at 83.82 115.82 0) (effects (font (size 1.27 1.27)))) (property "Footprint" "" (at 83.82 120.65 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 83.82 120.65 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "33516d0a-7c71-44cd-a193-bc689ddab4a0")) (instances (project "6 pin LED nRF52840" (path "/3d2a59a4-55d1-4bce-8447-fa4c2bb736dc" (reference "#PWR30") (unit 1)))))
+	(wire (pts (xy 83.82 120.65) (xy 83.82 123.19)) (stroke (width 0) (type default)) (uuid "9822b2c9-5cad-4fc8-a44f-86d71b505424"))
+	(wire (pts (xy 83.82 123.19) (xy 88.9 123.19)) (stroke (width 0) (type default)) (uuid "aca8748f-d3c4-4c89-8178-8771d374d2df"))
+	(wire (pts (xy 80.01 129.54) (xy 80.01 130.81)) (stroke (width 0) (type default)) (uuid "8613a35e-b96e-46c1-af04-03b40d30190d"))
+	(wire (pts (xy 80.01 130.81) (xy 83.82 130.81)) (stroke (width 0) (type default)) (uuid "e59f66ab-ddb5-4b98-bdbb-a7f523a9175b"))
+	(wire (pts (xy 83.82 130.81) (xy 86.36 130.81)) (stroke (width 0) (type default)) (uuid "e2ecd581-7c0a-4ce9-943a-06931b36fe48"))
+	(wire (pts (xy 86.36 130.81) (xy 86.36 125.73)) (stroke (width 0) (type default)) (uuid "e1762430-7f33-47f0-836f-0af489251d6f"))
+	(wire (pts (xy 86.36 125.73) (xy 88.9 125.73)) (stroke (width 0) (type default)) (uuid "82e324f6-c417-4e63-99be-5ce4a5f84eaa"))
+	(junction (at 83.82 130.81) (diameter 0) (color 0 0 0 0) (uuid "11df76c2-777a-4805-bfc1-c7a4c933568f"))
+	(text "Fan driver: PCF8574 (0x20) P2 HIGH = fan on, low-side Q7" (exclude_from_sim no) (at 93.98 143.51 0) (effects (font (size 1.27 1.27)) (justify left)) (uuid "e08492d2-86eb-417e-855b-e5cb779c1f4e"))
 	(sheet_instances
 		(path "/"
 			(page "1")

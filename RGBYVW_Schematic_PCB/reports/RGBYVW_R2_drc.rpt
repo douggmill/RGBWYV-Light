@@ -1,5 +1,5 @@
 ** Drc report for RGBYVW_R2.kicad_pcb **
-** Created on 2026-11-25T18:09:45 **
+** Created on 2026-11-25T18:11:43 **
 ** Report includes: Errors, Warnings **
 
 ** Found 179 DRC violations **
@@ -7,10 +7,6 @@
     Local override; error
     @(194.3975 mm, 114.4133 mm): Pad 1 [GREEN] of R5 on F.Cu
     @(194.3975 mm, 113.9133 mm): Pad 2 [Net-(Q2-G)] of R5 on F.Cu
-[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1000 mm)
-    Local override; error
-    @(136.3900 mm, 68.3000 mm): Pad 2 [Net-(Q5-G)] of R8 on F.Cu
-    @(135.8900 mm, 68.3000 mm): Pad 1 [VIOLET] of R8 on F.Cu
 [clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1000 mm)
     Local override; error
     @(136.3900 mm, 65.0000 mm): Pad 2 [Net-(Q3-G)] of R6 on F.Cu
@@ -21,164 +17,136 @@
     @(210.4000 mm, 113.9133 mm): Pad 2 [Net-(Q4-G)] of R7 on F.Cu
 [clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1000 mm)
     Local override; error
-    @(135.8900 mm, 63.3500 mm): Pad 1 [GREEN] of R5 on F.Cu
-    @(136.3900 mm, 63.3500 mm): Pad 2 [Net-(Q2-G)] of R5 on F.Cu
-[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1000 mm)
-    Local override; error
-    @(202.4000 mm, 114.4133 mm): Pad 1 [RED] of R6 on F.Cu
-    @(202.4000 mm, 113.9133 mm): Pad 2 [Net-(Q3-G)] of R6 on F.Cu
+    @(135.8900 mm, 61.7000 mm): Pad 1 [BLUE] of R4 on F.Cu
+    @(136.3900 mm, 61.7000 mm): Pad 2 [Net-(Q1-G)] of R4 on F.Cu
 [clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1000 mm)
     Local override; error
     @(218.4000 mm, 114.4375 mm): Pad 1 [VIOLET] of R8 on F.Cu
     @(218.4000 mm, 113.9375 mm): Pad 2 [Net-(Q5-G)] of R8 on F.Cu
 [clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1000 mm)
     Local override; error
-    @(184.7000 mm, 86.3500 mm): Pad 2 [Net-(Q6-G)] of R9 on F.Cu
-    @(184.2000 mm, 86.3500 mm): Pad 1 [AMBER] of R9 on F.Cu
+    @(135.8900 mm, 66.6500 mm): Pad 1 [WHITE] of R7 on F.Cu
+    @(136.3900 mm, 66.6500 mm): Pad 2 [Net-(Q4-G)] of R7 on F.Cu
 [clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1000 mm)
     Local override; error
     @(135.8900 mm, 69.9500 mm): Pad 1 [AMBER] of R9 on F.Cu
     @(136.3900 mm, 69.9500 mm): Pad 2 [Net-(Q6-G)] of R9 on F.Cu
 [clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1000 mm)
     Local override; error
-    @(135.8900 mm, 61.7000 mm): Pad 1 [BLUE] of R4 on F.Cu
-    @(136.3900 mm, 61.7000 mm): Pad 2 [Net-(Q1-G)] of R4 on F.Cu
+    @(136.3900 mm, 68.3000 mm): Pad 2 [Net-(Q5-G)] of R8 on F.Cu
+    @(135.8900 mm, 68.3000 mm): Pad 1 [VIOLET] of R8 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1000 mm)
+    Local override; error
+    @(202.4000 mm, 114.4133 mm): Pad 1 [RED] of R6 on F.Cu
+    @(202.4000 mm, 113.9133 mm): Pad 2 [Net-(Q3-G)] of R6 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1000 mm)
+    Local override; error
+    @(184.7000 mm, 86.3500 mm): Pad 2 [Net-(Q6-G)] of R9 on F.Cu
+    @(184.2000 mm, 86.3500 mm): Pad 1 [AMBER] of R9 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1000 mm)
+    Local override; error
+    @(135.8900 mm, 63.3500 mm): Pad 1 [GREEN] of R5 on F.Cu
+    @(136.3900 mm, 63.3500 mm): Pad 2 [Net-(Q2-G)] of R5 on F.Cu
 [clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1000 mm)
     Local override; error
     @(186.4000 mm, 114.4133 mm): Pad 1 [BLUE] of R4 on F.Cu
     @(186.4000 mm, 113.9133 mm): Pad 2 [Net-(Q1-G)] of R4 on F.Cu
-[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1000 mm)
-    Local override; error
-    @(135.8900 mm, 66.6500 mm): Pad 1 [WHITE] of R7 on F.Cu
-    @(136.3900 mm, 66.6500 mm): Pad 2 [Net-(Q4-G)] of R7 on F.Cu
-[shorting_items]: Items shorting two nets (nets <no net> and Net-(U5-ADJ))
-    Local override; error
-    @(198.6500 mm, 91.3500 mm): Segment [<no net>] on F.Cu
-    @(198.6500 mm, 91.5500 mm): Pad 11 [Net-(U5-ADJ)] of D2 on F.Cu
-[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.0350 mm)
-    Local override; error
-    @(188.5050 mm, 111.2133 mm): Segment [Net-(Q2-G)] on F.Cu
-    @(186.4000 mm, 111.2133 mm): Segment [Net-(D1-A)] on F.Cu
-[shorting_items]: Items shorting two nets (nets Net-(U5-ADJ) and Net-(U6-ADJ))
-    Local override; error
-    @(204.6500 mm, 76.3500 mm): Segment [Net-(U5-ADJ)] on F.Cu
-    @(204.6500 mm, 76.3500 mm): PTH pad 2 [Net-(U6-ADJ)] of R12
-[shorting_items]: Items shorting two nets (nets Net-(U4-VO) and <no net>)
-    Local override; error
-    @(179.1500 mm, 66.8500 mm): Segment [Net-(U4-VO)] on F.Cu
-    @(180.8450 mm, 66.8900 mm): PTH pad 2 [<no net>] of U3
-[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1955 mm)
-    Local override; error
-    @(179.1500 mm, 66.8500 mm): Segment [Net-(U4-VO)] on F.Cu
-    @(180.8450 mm, 66.8900 mm): PTH pad 2 [<no net>] of U3
 [shorting_items]: Items shorting two nets (nets <no net> and <no net>)
     Local override; error
     @(180.9000 mm, 76.3500 mm): Segment [<no net>] on F.Cu
     @(180.8450 mm, 69.4300 mm): PTH pad 1 [<no net>] of U3
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.0350 mm)
+    Local override; error
+    @(188.5050 mm, 111.2133 mm): Segment [Net-(Q2-G)] on F.Cu
+    @(186.4000 mm, 111.2133 mm): Segment [Net-(D1-A)] on F.Cu
+[shorting_items]: Items shorting two nets (nets Net-(U4-VO) and <no net>)
+    Local override; error
+    @(179.1500 mm, 66.8500 mm): Segment [Net-(U4-VO)] on F.Cu
+    @(180.8450 mm, 66.8900 mm): PTH pad 2 [<no net>] of U3
+[shorting_items]: Items shorting two nets (nets Net-(U5-ADJ) and Net-(U6-ADJ))
+    Local override; error
+    @(204.6500 mm, 76.3500 mm): Segment [Net-(U5-ADJ)] on F.Cu
+    @(204.6500 mm, 76.3500 mm): PTH pad 2 [Net-(U6-ADJ)] of R12
+[shorting_items]: Items shorting two nets (nets <no net> and Net-(U5-ADJ))
+    Local override; error
+    @(198.6500 mm, 91.3500 mm): Segment [<no net>] on F.Cu
+    @(198.6500 mm, 91.5500 mm): Pad 11 [Net-(U5-ADJ)] of D2 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1955 mm)
+    Local override; error
+    @(179.1500 mm, 66.8500 mm): Segment [Net-(U4-VO)] on F.Cu
+    @(180.8450 mm, 66.8900 mm): PTH pad 2 [<no net>] of U3
 [shorting_items]: Items shorting two nets (nets Net-(U6-ADJ) and Net-(U5-ADJ))
     Local override; error
     @(204.6500 mm, 76.3500 mm): PTH pad 2 [Net-(U6-ADJ)] of R12
     @(204.6500 mm, 78.6000 mm): Segment [Net-(U5-ADJ)] on F.Cu
-[shorting_items]: Items shorting two nets (nets Net-(U6-ADJ) and Net-(U7-ADJ))
-    Local override; error
-    @(207.0500 mm, 78.8500 mm): Segment [Net-(U6-ADJ)] on F.Cu
-    @(204.6500 mm, 81.3500 mm): PTH pad 2 [Net-(U7-ADJ)] of R13
-[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.0375 mm)
-    Local override; error
-    @(196.5050 mm, 111.2133 mm): Segment [Net-(Q3-G)] on F.Cu
-    @(194.3975 mm, 111.2133 mm): Segment [Net-(U2-GND)] on F.Cu
-[shorting_items]: Items shorting two nets (nets Net-(U6-ADJ) and Net-(U4-ADJ))
-    Local override; error
-    @(200.1500 mm, 91.5500 mm): Pad 10 [Net-(U6-ADJ)] of D2 on F.Cu
-    @(200.1500 mm, 91.3500 mm): Segment [Net-(U4-ADJ)] on F.Cu
-[shorting_items]: Items shorting two nets (nets <no net> and <no net>)
-    Local override; error
-    @(169.3800 mm, 73.3500 mm): PTH pad 2 [<no net>] of U2
-    @(171.4000 mm, 73.3500 mm): Segment [<no net>] on F.Cu
-[shorting_items]: Items shorting two nets (nets Net-(U5-ADJ) and Net-(U7-ADJ))
-    Local override; error
-    @(201.6500 mm, 91.3500 mm): Segment [Net-(U5-ADJ)] on F.Cu
-    @(201.6500 mm, 91.5500 mm): Pad 9 [Net-(U7-ADJ)] of D2 on F.Cu
 [shorting_items]: Items shorting two nets (nets Net-(U6-VO) and Net-(U5-VO))
     Local override; error
     @(217.3500 mm, 76.3500 mm): PTH pad 1 [Net-(U6-VO)] of R12
     @(217.3500 mm, 76.3500 mm): Segment [Net-(U5-VO)] on F.Cu
-[shorting_items]: Items shorting two nets (nets 12V and Net-(J1-Pin_1))
-    Local override; error
-    @(230.3875 mm, 88.5000 mm): Segment [12V] on F.Cu
-    @(230.4000 mm, 88.5600 mm): PTH pad 1 [Net-(J1-Pin_1)] of J1
-[shorting_items]: Items shorting two nets (nets Net-(U5-ADJ) and Net-(U4-ADJ))
-    Local override; error
-    @(197.1000 mm, 76.3500 mm): PTH pad 2 [Net-(U5-ADJ)] of R11
-    @(200.1500 mm, 79.3500 mm): Segment [Net-(U4-ADJ)] on F.Cu
-[shorting_items]: Items shorting two nets (nets <no net> and Net-(U4-ADJ))
-    Local override; error
-    @(198.6500 mm, 82.8500 mm): Segment [<no net>] on F.Cu
-    @(197.1500 mm, 81.3500 mm): PTH pad 2 [Net-(U4-ADJ)] of R10
 [shorting_items]: Items shorting two nets (nets Net-(U7-VO) and Net-(U6-VO))
     Local override; error
     @(217.3500 mm, 81.3500 mm): PTH pad 1 [Net-(U7-VO)] of R13
     @(221.4000 mm, 77.3500 mm): Segment [Net-(U6-VO)] on F.Cu
-[shorting_items]: Items shorting two nets (nets Net-(U7-ADJ) and Net-(U8-ADJ))
-    Local override; error
-    @(204.6500 mm, 91.3500 mm): Segment [Net-(U7-ADJ)] on F.Cu
-    @(204.6500 mm, 86.3500 mm): PTH pad 2 [Net-(U8-ADJ)] of R14
-[shorting_items]: Items shorting two nets (nets Net-(U9-ADJ) and Net-(U7-ADJ))
-    Local override; error
-    @(204.6500 mm, 91.5500 mm): Pad 7 [Net-(U9-ADJ)] of D2 on F.Cu
-    @(204.6500 mm, 91.3500 mm): Segment [Net-(U7-ADJ)] on F.Cu
-[shorting_items]: Items shorting two nets (nets Net-(U5-VO) and Net-(U4-VO))
-    Local override; error
-    @(184.4000 mm, 76.3500 mm): PTH pad 1 [Net-(U5-VO)] of R11
-    @(184.4000 mm, 76.3500 mm): Segment [Net-(U4-VO)] on F.Cu
-[shorting_items]: Items shorting two nets (nets Net-(U7-VO) and Net-(U8-VO))
-    Local override; error
-    @(223.4000 mm, 80.1000 mm): Segment [Net-(U7-VO)] on F.Cu
-    @(217.3500 mm, 86.3500 mm): PTH pad 1 [Net-(U8-VO)] of R14
-[shorting_items]: Items shorting two nets (nets <no net> and <no net>)
-    Local override; error
-    @(230.4000 mm, 111.8500 mm): Segment [<no net>] on F.Cu
-    @(230.3875 mm, 112.1633 mm): Pad 3 [<no net>] of Q7 on F.Cu
 [clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1875 mm)
     Local override; error
     @(218.4000 mm, 111.1000 mm): Segment [Net-(Q6-G)] on F.Cu
     @(218.4000 mm, 113.9375 mm): Pad 2 [Net-(Q5-G)] of R8 on F.Cu
-[shorting_items]: Items shorting two nets (nets <no net> and <no net>)
+[shorting_items]: Items shorting two nets (nets Net-(U6-ADJ) and Net-(U4-ADJ))
     Local override; error
-    @(230.4000 mm, 111.8500 mm): Segment [<no net>] on F.Cu
-    @(230.4000 mm, 107.6400 mm): PTH pad 2 [<no net>] of Fan1
-[shorting_items]: Items shorting two nets (nets AMBER and <no net>)
+    @(200.1500 mm, 91.5500 mm): Pad 10 [Net-(U6-ADJ)] of D2 on F.Cu
+    @(200.1500 mm, 91.3500 mm): Segment [Net-(U4-ADJ)] on F.Cu
+[shorting_items]: Items shorting two nets (nets Net-(U7-VO) and Net-(U8-VO))
     Local override; error
-    @(184.2000 mm, 86.3500 mm): Pad 1 [AMBER] of R9 on F.Cu
-    @(184.4500 mm, 86.3500 mm): Segment [<no net>] on F.Cu
-[shorting_items]: Items shorting two nets (nets Net-(U6-ADJ) and Net-(U8-ADJ))
+    @(223.4000 mm, 80.1000 mm): Segment [Net-(U7-VO)] on F.Cu
+    @(217.3500 mm, 86.3500 mm): PTH pad 1 [Net-(U8-VO)] of R14
+[shorting_items]: Items shorting two nets (nets Net-(U5-VO) and Net-(U4-VO))
     Local override; error
-    @(203.1500 mm, 91.3500 mm): Segment [Net-(U6-ADJ)] on F.Cu
-    @(203.1500 mm, 91.5500 mm): Pad 8 [Net-(U8-ADJ)] of D2 on F.Cu
-[shorting_items]: Items shorting two nets (nets Net-(Q6-G) and <no net>)
-    Local override; error
-    @(184.7000 mm, 86.3500 mm): Pad 2 [Net-(Q6-G)] of R9 on F.Cu
-    @(184.4500 mm, 86.3500 mm): Segment [<no net>] on F.Cu
+    @(184.4000 mm, 76.3500 mm): PTH pad 1 [Net-(U5-VO)] of R11
+    @(184.4000 mm, 76.3500 mm): Segment [Net-(U4-VO)] on F.Cu
 [clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.0675 mm)
     Local override; error
     @(180.2875 mm, 111.2133 mm): Segment [Net-(Q1-G)] on F.Cu
     @(178.1500 mm, 111.2133 mm): Segment [Net-(J2-Pin_3)] on F.Cu
-[shorting_items]: Items shorting two nets (nets <no net> and Net-(U4-ADJ))
-    Local override; error
-    @(169.3800 mm, 75.8900 mm): PTH pad 1 [<no net>] of U2
-    @(182.4000 mm, 88.8500 mm): Segment [Net-(U4-ADJ)] on F.Cu
 [shorting_items]: Items shorting two nets (nets <no net> and Net-(J2-Pin_2))
     Local override; error
     @(228.5125 mm, 111.2133 mm): Pad 1 [<no net>] of Q7 on F.Cu
     @(228.5125 mm, 111.2133 mm): Segment [Net-(J2-Pin_2)] on F.Cu
-[shorting_items]: Items shorting two nets (nets Net-(U4-ADJ) and Net-(U5-ADJ))
+[shorting_items]: Items shorting two nets (nets Net-(U6-ADJ) and Net-(U8-ADJ))
     Local override; error
-    @(197.1500 mm, 76.3500 mm): Segment [Net-(U4-ADJ)] on B.Cu
-    @(197.1000 mm, 76.3500 mm): PTH pad 2 [Net-(U5-ADJ)] of R11
+    @(203.1500 mm, 91.3500 mm): Segment [Net-(U6-ADJ)] on F.Cu
+    @(203.1500 mm, 91.5500 mm): Pad 8 [Net-(U8-ADJ)] of D2 on F.Cu
 [shorting_items]: Items shorting two nets (nets <no net> and Net-(U4-ADJ))
     Local override; error
     @(197.1500 mm, 81.3500 mm): Segment [<no net>] on B.Cu
     @(197.1500 mm, 81.3500 mm): PTH pad 2 [Net-(U4-ADJ)] of R10
+[shorting_items]: Items shorting two nets (nets <no net> and Net-(U4-ADJ))
+    Local override; error
+    @(169.3800 mm, 75.8900 mm): PTH pad 1 [<no net>] of U2
+    @(182.4000 mm, 88.8500 mm): Segment [Net-(U4-ADJ)] on F.Cu
+[shorting_items]: Items shorting two nets (nets <no net> and <no net>)
+    Local override; error
+    @(197.1500 mm, 81.3500 mm): Segment [<no net>] on B.Cu
+    @(199.6750 mm, 81.3500 mm): Pad 1 [<no net>] of C12 on B.Cu
+[shorting_items]: Items shorting two nets (nets <no net> and <no net>)
+    Local override; error
+    @(230.4000 mm, 111.8500 mm): Segment [<no net>] on F.Cu
+    @(230.3875 mm, 112.1633 mm): Pad 3 [<no net>] of Q7 on F.Cu
+[shorting_items]: Items shorting two nets (nets Net-(U6-ADJ) and Net-(U5-ADJ))
+    Local override; error
+    @(204.6500 mm, 76.3500 mm): PTH pad 2 [Net-(U6-ADJ)] of R12
+    @(204.6500 mm, 76.3500 mm): Segment [Net-(U5-ADJ)] on B.Cu
+[shorting_items]: Items shorting two nets (nets <no net> and <no net>)
+    Local override; error
+    @(230.4000 mm, 111.8500 mm): Segment [<no net>] on F.Cu
+    @(230.4000 mm, 107.6400 mm): PTH pad 2 [<no net>] of Fan1
+[shorting_items]: Items shorting two nets (nets <no net> and Net-(U4-ADJ))
+    Local override; error
+    @(199.6500 mm, 86.3500 mm): Pad 1 [<no net>] of C11 on B.Cu
+    @(197.1500 mm, 86.3500 mm): Segment [Net-(U4-ADJ)] on B.Cu
+[shorting_items]: Items shorting two nets (nets Net-(U8-ADJ) and Net-(U7-ADJ))
+    Local override; error
+    @(204.6500 mm, 86.3500 mm): PTH pad 2 [Net-(U8-ADJ)] of R14
+    @(204.6500 mm, 86.3500 mm): Segment [Net-(U7-ADJ)] on B.Cu
 [shorting_items]: Items shorting two nets (nets 12V and Net-(J1-Pin_1))
     Local override; error
     @(230.4000 mm, 88.5600 mm): Segment [12V] on B.Cu
@@ -187,162 +155,194 @@
     Local override; error
     @(231.4000 mm, 125.6000 mm): Pad 1 [<no net>] of D1 on B.Cu
     @(223.9000 mm, 133.1000 mm): Segment [Net-(C3-Pad1)] on B.Cu
-[shorting_items]: Items shorting two nets (nets Net-(U6-ADJ) and Net-(U5-ADJ))
+[shorting_items]: Items shorting two nets (nets Net-(U4-ADJ) and Net-(U5-ADJ))
     Local override; error
-    @(204.6500 mm, 76.3500 mm): PTH pad 2 [Net-(U6-ADJ)] of R12
-    @(204.6500 mm, 76.3500 mm): Segment [Net-(U5-ADJ)] on B.Cu
+    @(197.1500 mm, 76.3500 mm): Segment [Net-(U4-ADJ)] on B.Cu
+    @(197.1000 mm, 76.3500 mm): PTH pad 2 [Net-(U5-ADJ)] of R11
+[shorting_items]: Items shorting two nets (nets 12V and Net-(J1-Pin_1))
+    Local override; error
+    @(230.3875 mm, 88.5000 mm): Segment [12V] on F.Cu
+    @(230.4000 mm, 88.5600 mm): PTH pad 1 [Net-(J1-Pin_1)] of J1
+[shorting_items]: Items shorting two nets (nets <no net> and Net-(U4-ADJ))
+    Local override; error
+    @(198.6500 mm, 82.8500 mm): Segment [<no net>] on F.Cu
+    @(197.1500 mm, 81.3500 mm): PTH pad 2 [Net-(U4-ADJ)] of R10
+[shorting_items]: Items shorting two nets (nets Net-(U5-ADJ) and Net-(U4-ADJ))
+    Local override; error
+    @(197.1000 mm, 76.3500 mm): PTH pad 2 [Net-(U5-ADJ)] of R11
+    @(200.1500 mm, 79.3500 mm): Segment [Net-(U4-ADJ)] on F.Cu
+[shorting_items]: Items shorting two nets (nets Net-(U7-ADJ) and Net-(U8-ADJ))
+    Local override; error
+    @(204.6500 mm, 91.3500 mm): Segment [Net-(U7-ADJ)] on F.Cu
+    @(204.6500 mm, 86.3500 mm): PTH pad 2 [Net-(U8-ADJ)] of R14
 [shorting_items]: Items shorting two nets (nets <no net> and <no net>)
     Local override; error
-    @(197.1500 mm, 81.3500 mm): Segment [<no net>] on B.Cu
-    @(199.6750 mm, 81.3500 mm): Pad 1 [<no net>] of C12 on B.Cu
-[shorting_items]: Items shorting two nets (nets Net-(U8-ADJ) and Net-(U7-ADJ))
+    @(169.3800 mm, 73.3500 mm): PTH pad 2 [<no net>] of U2
+    @(171.4000 mm, 73.3500 mm): Segment [<no net>] on F.Cu
+[shorting_items]: Items shorting two nets (nets Net-(U5-ADJ) and Net-(U7-ADJ))
     Local override; error
-    @(204.6500 mm, 86.3500 mm): PTH pad 2 [Net-(U8-ADJ)] of R14
-    @(204.6500 mm, 86.3500 mm): Segment [Net-(U7-ADJ)] on B.Cu
+    @(201.6500 mm, 91.3500 mm): Segment [Net-(U5-ADJ)] on F.Cu
+    @(201.6500 mm, 91.5500 mm): Pad 9 [Net-(U7-ADJ)] of D2 on F.Cu
 [shorting_items]: Items shorting two nets (nets Net-(U7-ADJ) and Net-(U6-ADJ))
     Local override; error
     @(204.6500 mm, 81.3500 mm): PTH pad 2 [Net-(U7-ADJ)] of R13
     @(204.6500 mm, 81.3500 mm): Segment [Net-(U6-ADJ)] on B.Cu
-[shorting_items]: Items shorting two nets (nets <no net> and Net-(U4-ADJ))
+[shorting_items]: Items shorting two nets (nets Net-(U9-ADJ) and Net-(U7-ADJ))
     Local override; error
-    @(199.6500 mm, 86.3500 mm): Pad 1 [<no net>] of C11 on B.Cu
-    @(197.1500 mm, 86.3500 mm): Segment [Net-(U4-ADJ)] on B.Cu
-[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
-    Rule: board setup solder mask min width; error
-    @(184.4000 mm, 76.3500 mm): Segment [Net-(U4-VO)] on F.Cu
-    @(184.4000 mm, 76.3500 mm): PTH pad 1 [Net-(U5-VO)] of R11
-[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
-    Rule: board setup solder mask min width; error
-    @(182.4000 mm, 88.8500 mm): Segment [Net-(U4-ADJ)] on F.Cu
-    @(169.3800 mm, 75.8900 mm): PTH pad 1 [<no net>] of U2
-[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
-    Rule: board setup solder mask min width; error
-    @(230.4000 mm, 111.8500 mm): Segment [<no net>] on F.Cu
-    @(230.3875 mm, 112.1633 mm): Pad 3 [<no net>] of Q7 on F.Cu
-[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
-    Rule: board setup solder mask min width; error
-    @(230.4000 mm, 111.8500 mm): Segment [<no net>] on F.Cu
-    @(230.4000 mm, 107.6400 mm): PTH pad 2 [<no net>] of Fan1
-[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
-    Rule: board setup solder mask min width; error
-    @(184.4500 mm, 86.3500 mm): Segment [<no net>] on F.Cu
+    @(204.6500 mm, 91.5500 mm): Pad 7 [Net-(U9-ADJ)] of D2 on F.Cu
+    @(204.6500 mm, 91.3500 mm): Segment [Net-(U7-ADJ)] on F.Cu
+[shorting_items]: Items shorting two nets (nets AMBER and <no net>)
+    Local override; error
     @(184.2000 mm, 86.3500 mm): Pad 1 [AMBER] of R9 on F.Cu
-[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
-    Rule: board setup solder mask min width; error
     @(184.4500 mm, 86.3500 mm): Segment [<no net>] on F.Cu
+[shorting_items]: Items shorting two nets (nets Net-(Q6-G) and <no net>)
+    Local override; error
     @(184.7000 mm, 86.3500 mm): Pad 2 [Net-(Q6-G)] of R9 on F.Cu
-[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
-    Rule: board setup solder mask min width; error
-    @(203.1500 mm, 91.3500 mm): Segment [Net-(U6-ADJ)] on F.Cu
-    @(203.1500 mm, 91.5500 mm): Pad 8 [Net-(U8-ADJ)] of D2 on F.Cu
-[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
-    Rule: board setup solder mask min width; error
-    @(228.5125 mm, 111.2133 mm): Segment [Net-(J2-Pin_2)] on F.Cu
-    @(228.5125 mm, 111.2133 mm): Pad 1 [<no net>] of Q7 on F.Cu
-[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
-    Rule: board setup solder mask min width; error
-    @(204.6500 mm, 78.6000 mm): Segment [Net-(U5-ADJ)] on F.Cu
-    @(204.6500 mm, 76.3500 mm): PTH pad 2 [Net-(U6-ADJ)] of R12
-[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
-    Rule: board setup solder mask min width; error
-    @(171.4000 mm, 73.3500 mm): Segment [<no net>] on F.Cu
-    @(169.3800 mm, 73.3500 mm): PTH pad 2 [<no net>] of U2
-[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
-    Rule: board setup solder mask min width; error
+    @(184.4500 mm, 86.3500 mm): Segment [<no net>] on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.0375 mm)
+    Local override; error
+    @(196.5050 mm, 111.2133 mm): Segment [Net-(Q3-G)] on F.Cu
+    @(194.3975 mm, 111.2133 mm): Segment [Net-(U2-GND)] on F.Cu
+[shorting_items]: Items shorting two nets (nets Net-(U6-ADJ) and Net-(U7-ADJ))
+    Local override; error
     @(207.0500 mm, 78.8500 mm): Segment [Net-(U6-ADJ)] on F.Cu
     @(204.6500 mm, 81.3500 mm): PTH pad 2 [Net-(U7-ADJ)] of R13
 [solder_mask_bridge]: Front solder mask aperture bridges items with different nets
     Rule: board setup solder mask min width; error
     @(198.6500 mm, 91.3500 mm): Segment [<no net>] on F.Cu
     @(198.6500 mm, 91.5500 mm): Pad 11 [Net-(U5-ADJ)] of D2 on F.Cu
-[solder_mask_bridge]: Rear solder mask aperture bridges items with different nets
-    Rule: board setup solder mask min width; error
-    @(204.6500 mm, 81.3500 mm): Segment [Net-(U6-ADJ)] on B.Cu
-    @(204.6500 mm, 81.3500 mm): PTH pad 2 [Net-(U7-ADJ)] of R13
 [solder_mask_bridge]: Front solder mask aperture bridges items with different nets
     Rule: board setup solder mask min width; error
-    @(201.6500 mm, 91.3500 mm): Segment [Net-(U5-ADJ)] on F.Cu
-    @(201.6500 mm, 91.5500 mm): Pad 9 [Net-(U7-ADJ)] of D2 on F.Cu
-[solder_mask_bridge]: Rear solder mask aperture bridges items with different nets
-    Rule: board setup solder mask min width; error
-    @(197.1500 mm, 81.3500 mm): Segment [<no net>] on B.Cu
-    @(197.1500 mm, 81.3500 mm): PTH pad 2 [Net-(U4-ADJ)] of R10
-[solder_mask_bridge]: Rear solder mask aperture bridges items with different nets
-    Rule: board setup solder mask min width; error
-    @(204.6500 mm, 86.3500 mm): Segment [Net-(U7-ADJ)] on B.Cu
-    @(204.6500 mm, 86.3500 mm): PTH pad 2 [Net-(U8-ADJ)] of R14
+    @(184.4000 mm, 76.3500 mm): Segment [Net-(U4-VO)] on F.Cu
+    @(184.4000 mm, 76.3500 mm): PTH pad 1 [Net-(U5-VO)] of R11
 [solder_mask_bridge]: Front solder mask aperture bridges items with different nets
     Rule: board setup solder mask min width; error
-    @(200.1500 mm, 91.3500 mm): Segment [Net-(U4-ADJ)] on F.Cu
-    @(200.1500 mm, 91.5500 mm): Pad 10 [Net-(U6-ADJ)] of D2 on F.Cu
-[solder_mask_bridge]: Rear solder mask aperture bridges items with different nets
-    Rule: board setup solder mask min width; error
-    @(197.1500 mm, 81.3500 mm): Segment [<no net>] on B.Cu
-    @(199.6750 mm, 81.3500 mm): Pad 1 [<no net>] of C12 on B.Cu
-[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
-    Rule: board setup solder mask min width; error
-    @(217.3500 mm, 76.3500 mm): Segment [Net-(U5-VO)] on F.Cu
-    @(217.3500 mm, 76.3500 mm): PTH pad 1 [Net-(U6-VO)] of R12
+    @(171.4000 mm, 73.3500 mm): Segment [<no net>] on F.Cu
+    @(169.3800 mm, 73.3500 mm): PTH pad 2 [<no net>] of U2
 [solder_mask_bridge]: Front solder mask aperture bridges items with different nets
     Rule: board setup solder mask min width; error
     @(180.9000 mm, 76.3500 mm): Segment [<no net>] on F.Cu
     @(180.8450 mm, 69.4300 mm): PTH pad 1 [<no net>] of U3
 [solder_mask_bridge]: Rear solder mask aperture bridges items with different nets
     Rule: board setup solder mask min width; error
-    @(197.1500 mm, 76.3500 mm): Segment [Net-(U4-ADJ)] on B.Cu
-    @(197.1000 mm, 76.3500 mm): PTH pad 2 [Net-(U5-ADJ)] of R11
+    @(204.6500 mm, 81.3500 mm): Segment [Net-(U6-ADJ)] on B.Cu
+    @(204.6500 mm, 81.3500 mm): PTH pad 2 [Net-(U7-ADJ)] of R13
 [solder_mask_bridge]: Front solder mask aperture bridges items with different nets
     Rule: board setup solder mask min width; error
-    @(221.4000 mm, 77.3500 mm): Segment [Net-(U6-VO)] on F.Cu
-    @(217.3500 mm, 81.3500 mm): PTH pad 1 [Net-(U7-VO)] of R13
-[solder_mask_bridge]: Rear solder mask aperture bridges items with different nets
-    Rule: board setup solder mask min width; error
-    @(223.9000 mm, 133.1000 mm): Segment [Net-(C3-Pad1)] on B.Cu
-    @(231.4000 mm, 125.6000 mm): Pad 1 [<no net>] of D1 on B.Cu
+    @(182.4000 mm, 88.8500 mm): Segment [Net-(U4-ADJ)] on F.Cu
+    @(169.3800 mm, 75.8900 mm): PTH pad 1 [<no net>] of U2
 [solder_mask_bridge]: Front solder mask aperture bridges items with different nets
     Rule: board setup solder mask min width; error
-    @(230.3875 mm, 88.5000 mm): Segment [12V] on F.Cu
-    @(230.4000 mm, 88.5600 mm): PTH pad 1 [Net-(J1-Pin_1)] of J1
-[solder_mask_bridge]: Rear solder mask aperture bridges items with different nets
-    Rule: board setup solder mask min width; error
-    @(204.6500 mm, 76.3500 mm): Segment [Net-(U5-ADJ)] on B.Cu
+    @(204.6500 mm, 78.6000 mm): Segment [Net-(U5-ADJ)] on F.Cu
     @(204.6500 mm, 76.3500 mm): PTH pad 2 [Net-(U6-ADJ)] of R12
 [solder_mask_bridge]: Front solder mask aperture bridges items with different nets
     Rule: board setup solder mask min width; error
-    @(200.1500 mm, 79.3500 mm): Segment [Net-(U4-ADJ)] on F.Cu
-    @(197.1000 mm, 76.3500 mm): PTH pad 2 [Net-(U5-ADJ)] of R11
+    @(201.6500 mm, 91.3500 mm): Segment [Net-(U5-ADJ)] on F.Cu
+    @(201.6500 mm, 91.5500 mm): Pad 9 [Net-(U7-ADJ)] of D2 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(230.4000 mm, 111.8500 mm): Segment [<no net>] on F.Cu
+    @(230.3875 mm, 112.1633 mm): Pad 3 [<no net>] of Q7 on F.Cu
 [solder_mask_bridge]: Rear solder mask aperture bridges items with different nets
     Rule: board setup solder mask min width; error
-    @(230.4000 mm, 88.5600 mm): Segment [12V] on B.Cu
-    @(230.4000 mm, 88.5600 mm): PTH pad 1 [Net-(J1-Pin_1)] of J1
+    @(204.6500 mm, 86.3500 mm): Segment [Net-(U7-ADJ)] on B.Cu
+    @(204.6500 mm, 86.3500 mm): PTH pad 2 [Net-(U8-ADJ)] of R14
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(207.0500 mm, 78.8500 mm): Segment [Net-(U6-ADJ)] on F.Cu
+    @(204.6500 mm, 81.3500 mm): PTH pad 2 [Net-(U7-ADJ)] of R13
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(230.4000 mm, 111.8500 mm): Segment [<no net>] on F.Cu
+    @(230.4000 mm, 107.6400 mm): PTH pad 2 [<no net>] of Fan1
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(217.3500 mm, 76.3500 mm): Segment [Net-(U5-VO)] on F.Cu
+    @(217.3500 mm, 76.3500 mm): PTH pad 1 [Net-(U6-VO)] of R12
 [solder_mask_bridge]: Front solder mask aperture bridges items with different nets
     Rule: board setup solder mask min width; error
     @(204.6500 mm, 76.3500 mm): Segment [Net-(U5-ADJ)] on F.Cu
     @(204.6500 mm, 76.3500 mm): PTH pad 2 [Net-(U6-ADJ)] of R12
-[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
-    Rule: board setup solder mask min width; error
-    @(204.6500 mm, 91.3500 mm): Segment [Net-(U7-ADJ)] on F.Cu
-    @(204.6500 mm, 86.3500 mm): PTH pad 2 [Net-(U8-ADJ)] of R14
 [solder_mask_bridge]: Rear solder mask aperture bridges items with different nets
     Rule: board setup solder mask min width; error
-    @(197.1500 mm, 86.3500 mm): Segment [Net-(U4-ADJ)] on B.Cu
-    @(199.6500 mm, 86.3500 mm): Pad 1 [<no net>] of C11 on B.Cu
+    @(197.1500 mm, 81.3500 mm): Segment [<no net>] on B.Cu
+    @(197.1500 mm, 81.3500 mm): PTH pad 2 [Net-(U4-ADJ)] of R10
 [solder_mask_bridge]: Front solder mask aperture bridges items with different nets
     Rule: board setup solder mask min width; error
     @(179.1500 mm, 66.8500 mm): Segment [Net-(U4-VO)] on F.Cu
     @(180.8450 mm, 66.8900 mm): PTH pad 2 [<no net>] of U3
 [solder_mask_bridge]: Front solder mask aperture bridges items with different nets
     Rule: board setup solder mask min width; error
+    @(221.4000 mm, 77.3500 mm): Segment [Net-(U6-VO)] on F.Cu
+    @(217.3500 mm, 81.3500 mm): PTH pad 1 [Net-(U7-VO)] of R13
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(184.4500 mm, 86.3500 mm): Segment [<no net>] on F.Cu
+    @(184.2000 mm, 86.3500 mm): Pad 1 [AMBER] of R9 on F.Cu
+[solder_mask_bridge]: Rear solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(197.1500 mm, 81.3500 mm): Segment [<no net>] on B.Cu
+    @(199.6750 mm, 81.3500 mm): Pad 1 [<no net>] of C12 on B.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(184.4500 mm, 86.3500 mm): Segment [<no net>] on F.Cu
+    @(184.7000 mm, 86.3500 mm): Pad 2 [Net-(Q6-G)] of R9 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(230.3875 mm, 88.5000 mm): Segment [12V] on F.Cu
+    @(230.4000 mm, 88.5600 mm): PTH pad 1 [Net-(J1-Pin_1)] of J1
+[solder_mask_bridge]: Rear solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(197.1500 mm, 76.3500 mm): Segment [Net-(U4-ADJ)] on B.Cu
+    @(197.1000 mm, 76.3500 mm): PTH pad 2 [Net-(U5-ADJ)] of R11
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(200.1500 mm, 91.3500 mm): Segment [Net-(U4-ADJ)] on F.Cu
+    @(200.1500 mm, 91.5500 mm): Pad 10 [Net-(U6-ADJ)] of D2 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(200.1500 mm, 79.3500 mm): Segment [Net-(U4-ADJ)] on F.Cu
+    @(197.1000 mm, 76.3500 mm): PTH pad 2 [Net-(U5-ADJ)] of R11
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(204.6500 mm, 91.3500 mm): Segment [Net-(U7-ADJ)] on F.Cu
+    @(204.6500 mm, 86.3500 mm): PTH pad 2 [Net-(U8-ADJ)] of R14
+[solder_mask_bridge]: Rear solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(223.9000 mm, 133.1000 mm): Segment [Net-(C3-Pad1)] on B.Cu
+    @(231.4000 mm, 125.6000 mm): Pad 1 [<no net>] of D1 on B.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(203.1500 mm, 91.3500 mm): Segment [Net-(U6-ADJ)] on F.Cu
+    @(203.1500 mm, 91.5500 mm): Pad 8 [Net-(U8-ADJ)] of D2 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
     @(204.6500 mm, 91.3500 mm): Segment [Net-(U7-ADJ)] on F.Cu
     @(204.6500 mm, 91.5500 mm): Pad 7 [Net-(U9-ADJ)] of D2 on F.Cu
+[solder_mask_bridge]: Rear solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(204.6500 mm, 76.3500 mm): Segment [Net-(U5-ADJ)] on B.Cu
+    @(204.6500 mm, 76.3500 mm): PTH pad 2 [Net-(U6-ADJ)] of R12
 [solder_mask_bridge]: Front solder mask aperture bridges items with different nets
     Rule: board setup solder mask min width; error
     @(198.6500 mm, 82.8500 mm): Segment [<no net>] on F.Cu
     @(197.1500 mm, 81.3500 mm): PTH pad 2 [Net-(U4-ADJ)] of R10
 [solder_mask_bridge]: Front solder mask aperture bridges items with different nets
     Rule: board setup solder mask min width; error
+    @(228.5125 mm, 111.2133 mm): Segment [Net-(J2-Pin_2)] on F.Cu
+    @(228.5125 mm, 111.2133 mm): Pad 1 [<no net>] of Q7 on F.Cu
+[solder_mask_bridge]: Rear solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(230.4000 mm, 88.5600 mm): Segment [12V] on B.Cu
+    @(230.4000 mm, 88.5600 mm): PTH pad 1 [Net-(J1-Pin_1)] of J1
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
     @(223.4000 mm, 80.1000 mm): Segment [Net-(U7-VO)] on F.Cu
     @(217.3500 mm, 86.3500 mm): PTH pad 1 [Net-(U8-VO)] of R14
+[solder_mask_bridge]: Rear solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(197.1500 mm, 86.3500 mm): Segment [Net-(U4-ADJ)] on B.Cu
+    @(199.6500 mm, 86.3500 mm): Pad 1 [<no net>] of C11 on B.Cu
 [via_dangling]: Via is not connected or connected on only one layer
     Local override; warning
     @(176.4000 mm, 113.1000 mm): Via [GNDREF] on F.Cu - B.Cu
@@ -653,7 +653,7 @@
     @(214.5950 mm, 64.3000 mm): PTH pad 3 [12V] of U6
 [unconnected_items]: Missing connection between items
     Local override; error
-    @(175.4000 mm, 64.4000 mm): Segment [12V] on F.Cu
+    @(234.0000 mm, 70.9000 mm): Segment [12V] on F.Cu
     @(228.6400 mm, 51.5450 mm): PTH pad 3 [12V] of U7
 [unconnected_items]: Missing connection between items
     Local override; error
@@ -893,7 +893,7 @@
     @(112.6250 mm, 62.8750 mm): Pad 1 [Net-(Q1-D)] of D2 on F.Cu
 [unconnected_items]: Missing connection between items
     Local override; error
-    @(182.4000 mm, 109.8500 mm): Segment [Net-(Q1-D)] on F.Cu
+    @(182.4000 mm, 111.8500 mm): Segment [Net-(Q1-D)] on F.Cu
     @(141.6575 mm, 74.7750 mm): Pad 3 [Net-(Q1-D)] of Q1 on F.Cu
 [unconnected_items]: Missing connection between items
     Local override; error
@@ -1002,7 +1002,7 @@
 [unconnected_items]: Missing connection between items
     Local override; error
     @(141.6575 mm, 79.4000 mm): Pad 3 [Net-(Q2-D)] of Q2 on F.Cu
-    @(190.4000 mm, 111.8500 mm): Segment [Net-(Q2-D)] on F.Cu
+    @(190.4000 mm, 109.3500 mm): Segment [Net-(Q2-D)] on F.Cu
 [unconnected_items]: Missing connection between items
     Local override; error
     @(112.6250 mm, 70.3750 mm): Pad 6 [Net-(Q6-D)] of D2 on F.Cu
@@ -1026,7 +1026,7 @@
 [unconnected_items]: Missing connection between items
     Local override; error
     @(197.1500 mm, 81.3500 mm): PTH pad 2 [Net-(U4-ADJ)] of R10
-    @(200.1500 mm, 79.3500 mm): Segment [Net-(U4-ADJ)] on F.Cu
+    @(200.1500 mm, 91.3500 mm): Segment [Net-(U4-ADJ)] on F.Cu
 [unconnected_items]: Missing connection between items
     Local override; error
     @(197.1500 mm, 86.3500 mm): Segment [Net-(U4-ADJ)] on B.Cu
@@ -1037,8 +1037,8 @@
     @(200.1500 mm, 91.3500 mm): Segment [Net-(U4-ADJ)] on F.Cu
 [unconnected_items]: Missing connection between items
     Local override; error
-    @(200.1500 mm, 79.3500 mm): Segment [Net-(U4-ADJ)] on F.Cu
-    @(199.6500 mm, 76.3500 mm): Pad 1 [Net-(U4-ADJ)] of C13 on B.Cu
+    @(200.1500 mm, 91.3500 mm): Segment [Net-(U4-ADJ)] on F.Cu
+    @(197.1500 mm, 76.3500 mm): Segment [Net-(U4-ADJ)] on B.Cu
 [unconnected_items]: Missing connection between items
     Local override; error
     @(125.1500 mm, 89.0000 mm): PTH pad 2 [Net-(U7-ADJ)] of R13
@@ -1054,7 +1054,7 @@
 [unconnected_items]: Missing connection between items
     Local override; error
     @(204.6500 mm, 81.3500 mm): PTH pad 2 [Net-(U7-ADJ)] of R13
-    @(204.6500 mm, 91.3500 mm): Segment [Net-(U7-ADJ)] on F.Cu
+    @(204.6500 mm, 86.3500 mm): Segment [Net-(U7-ADJ)] on B.Cu
 [unconnected_items]: Missing connection between items
     Local override; error
     @(204.6500 mm, 86.3500 mm): Segment [Net-(U7-ADJ)] on B.Cu

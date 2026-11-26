@@ -1,7 +1,10 @@
-ERC report (2026-11-25T18:09:29, Encoding UTF8)
+ERC report (2026-11-25T18:11:28, Encoding UTF8)
 Report includes: Errors, Warnings
 
 ***** Sheet /
+[lib_symbol_mismatch]: Symbol 'IRLML6244' doesn't match copy in library 'Transistor_FET'
+    ; warning
+    @(77.47 mm, 134.62 mm): Symbol Q7 [IRLML6244]
 [footprint_link_issues]: The current configuration does not include the footprint library 'A_USER_FOOTPRINTS'
     ; warning
     @(107.95 mm, 66.04 mm): Symbol U10 [XIAO_nRF52840]
@@ -33,7 +36,7 @@ Report includes: Errors, Warnings
     ; warning
     @(203.20 mm, 86.36 mm): Symbol D2 [LED_RGBYWV_12_pin]
 
- ** ERC messages: 10  Errors 0  Warnings 10
+ ** ERC messages: 11  Errors 0  Warnings 11
 
  ** Ignored checks:
     - Global label only appears once in the schematic
